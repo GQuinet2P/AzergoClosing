@@ -1,0 +1,2268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Afficher_le_compte</fullName>
+        <categories>DCE_LC_Recherche_Compte</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Afficher le compte</shortDescription>
+        <value>Afficher le compte</value>
+    </labels>
+    <labels>
+        <fullName>Benefice_Biomecanique_apporte_par_la_solution</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Bénéfice Biomécanique apporté par la solution :</shortDescription>
+        <value>Bénéfice Biomécanique apporté par la solution :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_AssitanteConseiller</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_AssitanteConseiller</shortDescription>
+        <value>Votre référent.e administratif :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_CatalogueAzergo</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_CatalogueAzergo</shortDescription>
+        <value>VOTRE CATALOGUE AZERGO</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ClickHere</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ClickHere</shortDescription>
+        <value>Cliquer ici</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ConditionDeVente</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ConditionDeVente</shortDescription>
+        <value>SARL au capital de 601 400 € • RCS Lyon 499 946 630</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ConfidentialDocument</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ConfidentialDocument</shortDescription>
+        <value>Document Confidentiel, ne peut être communiqué</value>
+    </labels>
+    <labels>
+        <fullName>CDC_Contact</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_Contact</shortDescription>
+        <value>Contacter votre votre conseiller.ères près de chez vous :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ContactLink</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ContactLink</shortDescription>
+        <value>https://www.azergo.fr/contact/</value>
+    </labels>
+    <labels>
+        <fullName>CDC_DateValable</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_DateValable</shortDescription>
+        <value>Catalogue valable jusqu’au :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_DemandeEssai</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_DemandeEssai</shortDescription>
+        <value>Demander un essai :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_DemandeIntervention</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_DemandeIntervention</shortDescription>
+        <value>Faire une demande d’intervention :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_DemandeInterventionLink</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_DemandeInterventionLink</shortDescription>
+        <value>https://www.azergo.fr/essai/</value>
+    </labels>
+    <labels>
+        <fullName>CDC_DocumentName</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_DocumentName</shortDescription>
+        <value>CATALOGUE DE SOLUTIONS ERGONOMIQUES AZERGO</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FeesSectionLabel1</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FeesSectionLabel1</shortDescription>
+        <value>Afin de choisir les modalités de livraison et les prestations associées vous pouvez vous reporter aux éléments ci-dessous.</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FeesSectionLabel2</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FeesSectionLabel2</shortDescription>
+        <value>Frais de port, expédition via un transporteur (France métropolitaine)</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FeesSectionLabel3</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FeesSectionLabel3</shortDescription>
+        <value>Frais de déplacement d’un conseiller qui accompagnera aux réglages et à l’installation des solutions (France métropolitaine)</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FeesSectionLabel4</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FeesSectionLabel4</shortDescription>
+        <value>Frais de montage</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FeesSectionLabel5</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FeesSectionLabel5</shortDescription>
+        <value>Prestation d&apos;installation et réglage des solutions / Formation et accompagnement Utilisateur(trice) / Conseil au poste de travail / Compte rendu d&apos;intervention / Suivi des essais</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FooterText1</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FooterText1</shortDescription>
+        <value>SAS AZERGO - 8 rue des Muriers, ZA des Plattes, 69390 Vourles – contact@azergo.fr – www.azergo.fr</value>
+    </labels>
+    <labels>
+        <fullName>CDC_FooterText2</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_FooterText2</shortDescription>
+        <value>SIRET : 499 946 630 000 96 – APE : 4665Z – TVA : FR03 499 946 630</value>
+    </labels>
+    <labels>
+        <fullName>CDC_GammeFeeSection</fullName>
+        <categories>TMA_0004 - [TECH] Store gamme name written exactly the same as on the record separated by comma, no spaces</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_GammeFeeSection</shortDescription>
+        <value>Port,Montage,Deplacement,Intervention</value>
+    </labels>
+    <labels>
+        <fullName>CDC_InfomationPratiques</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_InfomationPratiques</shortDescription>
+        <value>Information pratiques concernant notre partenariat</value>
+    </labels>
+    <labels>
+        <fullName>CDC_InfomationSpecifique</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_InfomationSpecifique</shortDescription>
+        <value>Information spécifique concernant ce catalogue de prix :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_LienCatalogue</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_LienCatalogue</shortDescription>
+        <value>https://www.azergo.fr/wp-content/uploads/2018/05/Catalogue-AZERGO.pdf</value>
+    </labels>
+    <labels>
+        <fullName>CDC_LienGuideEtConseil</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_LienGuideEtConseil</shortDescription>
+        <value>https://www.azergo.fr/guides-conseils/</value>
+    </labels>
+    <labels>
+        <fullName>CDC_LienServiceEnLigne</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_LienServiceEnLigne</shortDescription>
+        <value>https://www.azergo.fr/</value>
+    </labels>
+    <labels>
+        <fullName>CDC_LienSupport</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_LienSupport</shortDescription>
+        <value>https://www.azergo.fr/support/</value>
+    </labels>
+    <labels>
+        <fullName>CDC_LienVersLaPageProduit</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_LienVersLaPageProduit</shortDescription>
+        <value>Lien vers la page produit (Fiche technique, mode d’emploi) :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ModaliteIntervention</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ModaliteIntervention</shortDescription>
+        <value>Modalité d’intervention</value>
+    </labels>
+    <labels>
+        <fullName>CDC_NumeroMarche</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_NumeroMarche</shortDescription>
+        <value>Marché N°</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ReferentAzergo</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ReferentAzergo</shortDescription>
+        <value>Votre référent.e Azergo :</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ReferentInterne</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ReferentInterne</shortDescription>
+        <value>Référent interne</value>
+    </labels>
+    <labels>
+        <fullName>CDC_ServiceEnLigne</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_ServiceEnLigne</shortDescription>
+        <value>Service en ligne</value>
+    </labels>
+    <labels>
+        <fullName>CDC_TableColumnHeader1</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_TableColumnHeader1</shortDescription>
+        <value>Visuel de la solution Non contractuel</value>
+    </labels>
+    <labels>
+        <fullName>CDC_TableColumnHeader2</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_TableColumnHeader2</shortDescription>
+        <value>Référence et désignation</value>
+    </labels>
+    <labels>
+        <fullName>CDC_TableColumnHeader3</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_TableColumnHeader3</shortDescription>
+        <value>Informations tarifaires</value>
+    </labels>
+    <labels>
+        <fullName>CDC_intituleAutreReferentContrat</fullName>
+        <categories>TMA_0004</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CDC_intituleAutreReferentContrat</shortDescription>
+        <value>L’intitulé autre référent contrat</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_CONSTRUCTOR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER CONSTRUCTOR MESSAGE</shortDescription>
+        <value>The sObject types for each Id must be the same</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_CONSTRUCTOR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER CONSTRUCTOR TITLE</shortDescription>
+        <value>Record SObject Types</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_MESSAGE_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR MESSAGE 1</shortDescription>
+        <value>Source Id:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_MESSAGE_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR MESSAGE 2</shortDescription>
+        <value>is not a valid Id or cannot be associated to an object in this org</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_MESSAGE_DESTINATION_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR MESSAGE DESTINATION 1</shortDescription>
+        <value>Destination Id:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_AN_ID_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT AN ID ERROR TITLE</shortDescription>
+        <value>Not an Id</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_SELECTED_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT SELECTED ERROR MESSAGE</shortDescription>
+        <value>Please select at least 1 set of Child records</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NOT_SELECTED_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NOT SELECTED ERROR TITLE</shortDescription>
+        <value>Child Records Not Selected</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_OBJECTS_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD OBJECTS ERROR MESSAGE</shortDescription>
+        <value>There are no Child Objects associated with:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_OBJECTS_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD OBJECTS ERROR TITLE</shortDescription>
+        <value>No Child Objects</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_RECORDS_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD RECORDS MESSAGE</shortDescription>
+        <value>There are no child records on this parent record to clone</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_NO_CHILD_RECORDS_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER NO CHILD RECORDS TITLE</shortDescription>
+        <value>No Child Records</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_MESSAGE_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR MESSAGE 1</shortDescription>
+        <value>The Source:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_MESSAGE_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR MESSAGE 2</shortDescription>
+        <value>and Destination:</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_MESSAGE_3</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR MESSAGE 3</shortDescription>
+        <value>Id Objects do not Match</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_OBJECT_MISMATCH_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER OBJECT MISMATCH ERROR TITLE</shortDescription>
+        <value>Object Mismatch</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_PARENT_CLONE_RECORD_ERROR_MESSAGE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER PARENT CLONE RECORD ERROR MESSAGE</shortDescription>
+        <value>Errors have occurred when trying to clone your parent record</value>
+    </labels>
+    <labels>
+        <fullName>CLONE_LIST_CONTROLLER_PARENT_CLONE_RECORD_ERROR_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>CLONE LIST CONTROLLER PARENT CLONE RECORD ERROR TITLE</shortDescription>
+        <value>Parent Clone Error</value>
+    </labels>
+    <labels>
+        <fullName>CL_Config_hors_standard_Msg</fullName>
+        <categories>TMA_0075</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_Config_hors_standard_Msg</shortDescription>
+        <value>Attention infos prélèvement : Configurations Hors Standard</value>
+    </labels>
+    <labels>
+        <fullName>CL_Entity3D_Concept</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_Entity3D_Concept</shortDescription>
+        <value>3D Concept</value>
+    </labels>
+    <labels>
+        <fullName>CL_ErrorMessage_CycleEssai</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_ErrorMessage_CycleEssai</shortDescription>
+        <value>Vous ne pouvez pas supprimer ce cycle d&apos;essai car vous n&apos;êtes pas un administrateur et le cycle d&apos;essai est fermé.</value>
+    </labels>
+    <labels>
+        <fullName>CL_Frais_txt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_Frais_txt</shortDescription>
+        <value>Frais</value>
+    </labels>
+    <labels>
+        <fullName>CL_OptionRetirer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_OptionRetirer</shortDescription>
+        <value>Attention prélèvement : Option retiré de la configuration standard.</value>
+    </labels>
+    <labels>
+        <fullName>CL_SystemAdministrator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_SystemAdministrator</shortDescription>
+        <value>00eb0000000yTGhAAM</value>
+    </labels>
+    <labels>
+        <fullName>CL_frais_Action</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CL_Frais_Action</shortDescription>
+        <value>Généré</value>
+    </labels>
+    <labels>
+        <fullName>Commentaire_photo</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Commentaire_photo</shortDescription>
+        <value>Commentaire concernant la photo ci-dessous :</value>
+    </labels>
+    <labels>
+        <fullName>Conclusion_essai</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Conclusion essai</shortDescription>
+        <value>Conclusion de l’essai :</value>
+    </labels>
+    <labels>
+        <fullName>Conditions_pret_ligne</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Conditions_pret_ligne</shortDescription>
+        <value>Conditions de prêt de matériel</value>
+    </labels>
+    <labels>
+        <fullName>Conditions_pret_ligne_1</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Conditions_pret_ligne_1</shortDescription>
+        <value>Conditions de prêt</value>
+    </labels>
+    <labels>
+        <fullName>Conditions_pret_ligne_2</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Conditions_pret_ligne_2</shortDescription>
+        <value>de matériel par Azergo</value>
+    </labels>
+    <labels>
+        <fullName>Conseiller_Azergo</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Conseiller Azergo</shortDescription>
+        <value>Votre Conseiller</value>
+    </labels>
+    <labels>
+        <fullName>Creer_un_compte</fullName>
+        <categories>DCE_LC_Recherche_Compte</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Créer un compte</shortDescription>
+        <value>Créer un compte</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_SECTION_ACTION_BUTTON</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK SECTION ACTION BUTTON</shortDescription>
+        <value>Copy Selected Objects</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_SECTION_ACTION_LABEL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK SECTION ACTION LABEL</shortDescription>
+        <value>Copying records, sending it over to destination record please wait.......</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_SECTION_DEST_LABEL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK SECTION DEST LABEL</shortDescription>
+        <value>Please Insert the Destination Id</value>
+    </labels>
+    <labels>
+        <fullName>DESTINATION_RECORD_PAGE_BLOCK_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DESTINATION RECORD PAGE BLOCK TITLE</shortDescription>
+        <value>Destination Record</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Date_contrats</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>Date_de_debut_de_contrat</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Date de début de contrat contrats</shortDescription>
+        <value>Date de début de contrat :</value>
+    </labels>
+    <labels>
+        <fullName>Date_de_signature</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Date de signature contrats</shortDescription>
+        <value>Date de signature :</value>
+    </labels>
+    <labels>
+        <fullName>Debut_premiere_phrase_amenagement</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Début première phrase aménagement</shortDescription>
+        <value>est intervenu le</value>
+    </labels>
+    <labels>
+        <fullName>Deuxieme_phrase_Opportunite</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Deuxième phrase Opportunité</shortDescription>
+        <value>Les réglages ont été effectués pour que la/les solutions soient adaptées à la morphologie et à l’environnement de travail. Les retours d’impressions suite à l’essai sont planifiés pour le</value>
+    </labels>
+    <labels>
+        <fullName>Duree_d_engagement_du_contrat</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Durée d’engagement du contrat contrats</shortDescription>
+        <value>Durée d’engagement du contrat :</value>
+    </labels>
+    <labels>
+        <fullName>Empecher_la_suppression_du_compte_d_une_autre_entite</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Empecher la suppression du compte d&apos;une autre entité</shortDescription>
+        <value>Vous ne pouvez pas supprimer le compte d&apos;une autre entité.</value>
+    </labels>
+    <labels>
+        <fullName>Empecher_la_suppression_du_contact_d_une_autre_entite</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Empecher la suppression du contact d&apos;une autre entité</shortDescription>
+        <value>Vous ne pouvez pas supprimer un contact d&apos;une autre entité</value>
+    </labels>
+    <labels>
+        <fullName>EnhancedFileUpload_FileLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnhancedFileUpload_FileLabel</shortDescription>
+        <value>File to upload</value>
+    </labels>
+    <labels>
+        <fullName>EnhancedFileUpload_Loader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnhancedFileUpload_Loader</shortDescription>
+        <value>File(s) loading</value>
+    </labels>
+    <labels>
+        <fullName>EnhancedFileUpload_SuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EnhancedFileUpload_SuccessMsg</shortDescription>
+        <value>File(s) successfully uploaded</value>
+    </labels>
+    <labels>
+        <fullName>Entete_Ligne_1_Contrat_Location</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Entête Ligne 1 Contrat Location</shortDescription>
+        <value>CONTRAT DE PRESTATION DE SERVICE</value>
+    </labels>
+    <labels>
+        <fullName>Entete_Ligne_1_Contrat_d_Abonnement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Entête Ligne 1 Contrat d&apos;Abonnement</shortDescription>
+        <value>CONTRAT ABONNEMENT</value>
+    </labels>
+    <labels>
+        <fullName>Entete_Ligne_2_Contrat_Location</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Entête Ligne 2 Contrat Location</shortDescription>
+        <value>PROGRAMME AIR PUR</value>
+    </labels>
+    <labels>
+        <fullName>Entete_Ligne_2_Contrat_d_Abonnement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Entête Ligne 2 Contrat d&apos;Abonnement</shortDescription>
+        <value>ABONNEMENT FILTRE</value>
+    </labels>
+    <labels>
+        <fullName>Entite</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Entité_contrats</shortDescription>
+        <value>Azergo</value>
+    </labels>
+    <labels>
+        <fullName>Error_BlockAccountModification</fullName>
+        <categories>TMA_0063</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error_BlockAccountModification</shortDescription>
+        <value>Ce compte est synchroniser avec SAP, pour toute modification, merci de vous rapprocher de votre assistante.</value>
+    </labels>
+    <labels>
+        <fullName>Error_BlockOpportunityCreation</fullName>
+        <categories>TMA_0062</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error_BlockOpportunityCreation</shortDescription>
+        <value>Vous ne pouvez pas créer d&apos;opportunité sur ce compte. Merci de vous rapprocher de votre ADV.</value>
+    </labels>
+    <labels>
+        <fullName>Error_message_Account_is_debtor</fullName>
+        <categories>Opportunity insertion or update</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message - Account is debtor</shortDescription>
+        <value>This account is debtor. You can&apos;t insert or upadte opportunities on it.</value>
+    </labels>
+    <labels>
+        <fullName>Error_message_Problem_saving_the_survey_form</fullName>
+        <categories>Satisfaction Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error message - Problem saving the survey form</shortDescription>
+        <value>There is a problem when saving the form. Please try again a little later.</value>
+    </labels>
+    <labels>
+        <fullName>Error_opp_Account_is_debtor</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Error_opp_Account_is_debtor</shortDescription>
+        <value>Ce compte est débiteur. Vous ne pouvez ni y créer des opportunités ni en modifier.</value>
+    </labels>
+    <labels>
+        <fullName>Fin_premiere_phrase_opportunite</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Fin première phrase opportunié</shortDescription>
+        <value>afin de procéder à la mise en essai des solutions présentées dans la suite du document.</value>
+    </labels>
+    <labels>
+        <fullName>Fonction_du_Signataire</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Fonction_du_Signataire_contrats</shortDescription>
+        <value>Fonction du Signataire :</value>
+    </labels>
+    <labels>
+        <fullName>Frequence_de_facturation</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Fréquence de facturation contrats</shortDescription>
+        <value>Fréquence de facturation :</value>
+    </labels>
+    <labels>
+        <fullName>Frequence_du_paiement_des_loyers</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Fréquence du paiement des loyers contrats</shortDescription>
+        <value>Fréquence du paiement des loyers :</value>
+    </labels>
+    <labels>
+        <fullName>Informations_Adresse_d_implantation_abonnements_filtres</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Informations Adresse d’implantation des abonnements filtres</shortDescription>
+        <value>Adresse d’implantation des abonnements filtres :</value>
+    </labels>
+    <labels>
+        <fullName>Informations_Adresse_d_implantation_des_equipements</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Informations Adresse d’implantation des équipements</shortDescription>
+        <value>Adresse d’implantation des équipements et prestations de service :</value>
+    </labels>
+    <labels>
+        <fullName>Informations_complementaires</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Informations complémentaires</shortDescription>
+        <value>Informations complémentaires</value>
+    </labels>
+    <labels>
+        <fullName>Informations_du_referent_sur_site</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Informations du référent sur site</shortDescription>
+        <value>Référent sur site (Prénom/Nom/mail/téléphone) :</value>
+    </labels>
+    <labels>
+        <fullName>LE_RETOUR_SIGNE</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>LE RETOUR SIGNE</shortDescription>
+        <value>Le bon de prêt signé vaut pour acceptation des conditions mentionnées sur le document de bon de prêt.</value>
+    </labels>
+    <labels>
+        <fullName>L_amenagement</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>L&apos;aménagement</shortDescription>
+        <value>L&apos;aménagement</value>
+    </labels>
+    <labels>
+        <fullName>L_echeance_indiquee</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>L’échéance indiquée</shortDescription>
+        <value>L’échéance indiquée devra être respectée par le bénéficiaire du prêt 
+pour nous faire parvenir son retour d’impression</value>
+    </labels>
+    <labels>
+        <fullName>Le_materiel_reste</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Le matériel reste</shortDescription>
+        <value>Le matériel reste notre propriété durant le prêt</value>
+    </labels>
+    <labels>
+        <fullName>Les_photos</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Les photos</shortDescription>
+        <value>Les photos</value>
+    </labels>
+    <labels>
+        <fullName>Les_solutions</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Les solutions</shortDescription>
+        <value>Les solutions</value>
+    </labels>
+    <labels>
+        <fullName>Les_solutions_en_essai_en_cours</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Les solutions en essai en cours</shortDescription>
+        <value>Les solutions en essai en cours</value>
+    </labels>
+    <labels>
+        <fullName>Les_solutions_non_mises_en_essai</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Les solutions non mises en essai</shortDescription>
+        <value>Les solutions non mises en essai</value>
+    </labels>
+    <labels>
+        <fullName>Lien_URL_Documentation</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Lien URL Documentation</shortDescription>
+        <value>N&apos;hésitez pas à cliquer sur les liens ci-dessous pour en savoir plus :</value>
+    </labels>
+    <labels>
+        <fullName>Localisation_des_genes_douleurs</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Localisation des gènes/douleurs</shortDescription>
+        <value>Localisation des gènes/douleurs</value>
+    </labels>
+    <labels>
+        <fullName>MERCI_DE_RENVOYER</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>MERCI DE RENVOYER</shortDescription>
+        <value>Vos données ont été recueillies par votre conseiller, lors de l’aménagement de votre poste de travail. Vos nom, prénom, téléphone, mail, adresse du lieu de travail, gênes physiques, sont obligatoires pour vous apporter une solution adaptée dans le cadre de notre pratique. Ces données sont conservées pendant toute la durée de vie des produits afin de pouvoir assurer un suivi de qualité, ou un SAV si besoin. Elles seront exploitées, le cas échéant, par le service des aménagements de postes de travail. Si nécessaire, vos informations peuvent être transmises à un prestataire externe, uniquement pour assurer la livraison et/ou l’installation de matériel. Vos données ne feront pas l’objet d’un transfert hors Union Européenne ; conformément à la règlementation applicable. Vous pouvez demander l’accès, la rectification ou l’effacement de vos données. Vous pouvez exercer vos droits en vous adressant directement auprès de votre conseiller.</value>
+    </labels>
+    <labels>
+        <fullName>Message_d_erreur_creation_de_devis_3D_Concept_quand_Partenaire_Accord_renseigne</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Message d&apos;erreur:création de devis 3D Concept quand Partenaire Accord renseigné</shortDescription>
+        <value>Le champ Partenaire Accord est renseigné. Pour toute création de devis merci de vous adresser à l&apos;interlocuteur Azergo en charge des accords.</value>
+    </labels>
+    <labels>
+        <fullName>Modifier_le_compte</fullName>
+        <categories>DCE_LC_Recherche_Compte</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Modifier le compte</shortDescription>
+        <value>Modifier le compte</value>
+    </labels>
+    <labels>
+        <fullName>Nom_Prenom_du_signataire</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Nom_Prénom_du_signataire_contrats</shortDescription>
+        <value>Nom, Prénom du signataire :</value>
+    </labels>
+    <labels>
+        <fullName>Nom_du_client</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Nom du client contrats</shortDescription>
+        <value>Nom du client :</value>
+    </labels>
+    <labels>
+        <fullName>Numero_de_contrat</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Numéro de contrat</shortDescription>
+        <value>N° de contrat :</value>
+    </labels>
+    <labels>
+        <fullName>Photos_apres</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Photos_apres</shortDescription>
+        <value>Après l’aménagement :</value>
+    </labels>
+    <labels>
+        <fullName>Photos_avant</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Photos_avant</shortDescription>
+        <value>Avant l’aménagement :</value>
+    </labels>
+    <labels>
+        <fullName>Pour_aller_plus_loin</fullName>
+        <categories>Tempalte email Visualforce fiche de synthèse d&apos;intervention</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Pour aller plus loin</shortDescription>
+        <value>Pour aller plus loin dans l&apos;amélioration de vos conditions de travail nous vous invitons à consulter notre rubrique Guides&amp;Conseils: http://www.azergo.fr/categorie_guide/guides-conseils</value>
+    </labels>
+    <labels>
+        <fullName>Pour_aller_plus_loin_suisse</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Pour aller plus loin suisse</shortDescription>
+        <value>Pour aller plus loin dans l&apos;amélioration de vos conditions de travail nous vous invitons à consulter notre rubrique Guides&amp;Conseils: http://www.azergo.ch/categorie_guide/guides-conseils</value>
+    </labels>
+    <labels>
+        <fullName>Prescriptions_medicales_ergonomiques</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Prescriptions médicales/ergonomiques</shortDescription>
+        <value>Prescriptions médicales/ergonomiques</value>
+    </labels>
+    <labels>
+        <fullName>Retour_d_impression_suite_a_lessai</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Retour d’impression suite à l’essai</shortDescription>
+        <value>Retour d’impression suite à l’essai :</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_BUTTON</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION BUTTON</shortDescription>
+        <value>Get Child Data</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_CHECKBOX</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION CHECKBOX</shortDescription>
+        <value>Clone this Parent Too</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_MASTER_HEADER</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION MASTER HEADER</shortDescription>
+        <value>Master Detail</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_RECORD_HEADER</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION RECORD HEADER</shortDescription>
+        <value>Record Amount</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_SELECT_HEADER</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION SELECT HEADER</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_SELECT_NAME</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION SELECT NAME</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_START_FACET</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION START FACET</shortDescription>
+        <value>Getting data please wait....</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_SECTION_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK SECTION TITLE</shortDescription>
+        <value>Please Insert the Source Id</value>
+    </labels>
+    <labels>
+        <fullName>SOURCE_RECORD_PAGE_BLOCK_TITLE</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SOURCE RECORD PAGE BLOCK TITLE</shortDescription>
+        <value>Source Record</value>
+    </labels>
+    <labels>
+        <fullName>Si_le_beneficiaire_souhaite</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Si le bénéficiaire souhaite</shortDescription>
+        <value>Si le bénéficiaire souhaite prolonger le prêt, vous pouvez nous en faire parvenir la demande avant l’échéance du prêt, et se réserve le droit d’examen de cette demande</value>
+    </labels>
+    <labels>
+        <fullName>Signature</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Signature_contrats</shortDescription>
+        <value>Signature</value>
+    </labels>
+    <labels>
+        <fullName>Signature_et_cachet_de_l_entreprise</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Signature_et_cachet_de_l’entreprise_contrats</shortDescription>
+        <value>Signature et cachet de l’entreprise :</value>
+    </labels>
+    <labels>
+        <fullName>Societe_ou_Organisme</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Société/Organisme</shortDescription>
+        <value>Société/Organisme</value>
+    </labels>
+    <labels>
+        <fullName>Tech_EditableFields</fullName>
+        <categories>TMA_0063 - Store the API names of all fields that should be editable separated by comma not spaces between</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tech_EditableFields</shortDescription>
+        <value>ShippingCity,ShippingCountry,ShippingCountryCode,ShippingPostalCode,ShippingState,ShippingStateCode,ShippingStreet,SystemModstamp,Complement_adresse_livraison__c,ShippingGeocodeAccuracy,ShippingLatitude,ShippingLongitude,Est_code_postal_valide__c,Affichage_de_la_recherche_auto_complete__c,TECH_Postal_Code__c</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_1</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 1</shortDescription>
+        <value>Le présent Contrat est conclu pour la durée d’engagement indiquée dans ce document, et sera tacitement reconduit au terme du délai contractuel aux mêmes conditions (à l’exception du loyer qui sera révisé au tarif catalogue en vigueur lors de la reconduction), pour des durées successives forfaitaires de 12 mois, sauf dénonciation expresse</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_2</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 2</shortDescription>
+        <value>par lettre recommandée avec accusé de réception par l’une ou l’autre des parties dans les 3 mois précédant ledit terme. Le Client pourra procéder à une résiliation anticipée de Contrat par écrit, sous réserve de l’accord par Azergo.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_3</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 3</shortDescription>
+        <value>Les tarifs des abonnements sont révisables à la date d’anniversaire du contrat. Cette révision se fera dans les mêmes proportions que l’évolution du prix public HT des filtres concernés par l’abonnement. Les tarifs sont révisables selon la formule suivante :</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_4</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 4</shortDescription>
+        <value>TA = TAI x (PPN / PPI)</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_5</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 5</shortDescription>
+        <value>Dans laquelle :</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_6</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 6</shortDescription>
+        <value>TA : Tarif abonnement révisé</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_7</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 7</shortDescription>
+        <value>TAI : Tarif abonnement initial</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_8</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 8</shortDescription>
+        <value>PPN : Tarif Public Azergo, du filtre concerné, en vigueur à la date de révision du prix</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Duree_de_validite_du_Contrat_Resiliation_contrat_d_abonnement_partie_9</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat d&apos;abonnement) partie 9</shortDescription>
+        <value>PPI : Tarif Public Azergo, du filtre concerné, en vigueur à la date de démarrage de l’abonnement</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Etat_du_materiel</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte_Etat_du_matériel</shortDescription>
+        <value>Pendant toute la durée du contrat (ci-après le « Contrat »), Azergo s’engage à installer et à maintenir les 
+                équipements mis à disposition du Client (ci-après l’« Équipement ») en parfait état de fonctionnement et à envoyer 
+                la quantité de consommable suffisante à la bonne marche des appareils. La fourniture des consommables est incluse 
+                dans le présent contrat. Azergo ne pourra être tenu responsable des interruptions de service ou des pannes causées 
+                par un cas de force majeure tel que, entre autres, une catastrophe naturelle, une grève, une panne de courant, une 
+                décision gouvernementale, une pandémie. Azergo ne pourra pas être tenu responsable des interruptions ou des pannes 
+                dans le cas d’utilisation de filtres non fournis par Azergo.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Fourniture_Filtres</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte_Fourniture_Filtres</shortDescription>
+        <value>Pendant toute la durée du contrat (ci-après le « Contrat »), Azergo s’engage à envoyer la quantité de filtres suffisante à la bonne marche des appareils. Azergo ne pourra être tenu responsable des interruptions de service ou des pannes causées par un cas de force majeure tel que, entre autres, une catastrophe naturelle, une grève, une panne de courant, une décision gouvernementale, une pandémie.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Impayes_et_Non_respect_des_obligations</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Impayés et Non respect des obligations Contrat de location</shortDescription>
+        <value>Tout défaut de paiement ou toute violation de l&apos;une des dispositions du présent Contrat par le Client entraînera 
+                le paiement immédiat de la totalité des impayés et du solde dû jusqu&apos;au terme du Contrat à titre de 
+                dommages-intérêts fixés à l&apos;avance. Dans cette hypothèse, Azergo aura le droit d&apos;accéder aux lieux des Équipements 
+                sans préavis, de récupérer l’Équipement et d&apos;interrompre le Service.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_Impayes_et_Non_respect_des_obligations_Contrat_d_abonnement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Impayés et Non respect des obligations Contrat d&apos;abonnement</shortDescription>
+        <value>Tout défaut de paiement ou toute violation de l&apos;une des dispositions du présent Contrat par le Client entraînera le paiement immédiat de la totalité des impayés et du solde dû jusqu&apos;au terme du Contrat à titre de dommages-intérêts fixés à l&apos;avance. Dans cette hypothèse, Azergo aura le droit d&apos;accéder aux lieux des Équipements sans préavis, de récupérer les filtres non payés et d’interrompre le Service.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_attribution_de_juridiction</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte attribution de juridiction contrats</shortDescription>
+        <value>Les parties s’en remettent au Tribunal de commerce de Lyon pour juger de tout différend entre elles.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_benefice_mecanique_3DConcept</fullName>
+        <categories>Formulaire de satisfaction</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Bénéfice Mécanique 3D Concept</shortDescription>
+        <value>Dans le cadre de l’essai de matériel prêté par 3D Concept, merci de nous faire un point précis sur les bénéfices que vous apportent les différents outils à votre disposition et les éventuelles difficultés rencontrées.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_benefice_mecanique_Azergo</fullName>
+        <categories>Formulaire de satisfaction</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Bénéfice Mécanique Azergo</shortDescription>
+        <value>Quels sont les bénéfices que vous apportent la/les solutions installées ?</value>
+    </labels>
+    <labels>
+        <fullName>Texte_cession_du_contrat</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte cession du contrat de location</shortDescription>
+        <value>La vente, le transfert, la fermeture ou le changement d&apos;adresse du Client n&apos;aura aucun effet ni aucune conséquence 
+                sur les obligations du Client. Le Contrat ne peut pas être cédé par le Client sans le consentement préalable écrit 
+                d’Azergo, lequel ne sera pas refusé sans motif raisonnable. Azergo, à sa seule discrétion, pourra céder le Contrat 
+                sans le consentement préalable de l&apos;Abonné.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_cession_du_contrat_contrat_d_abonnement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte cession du contrat contrat d&apos;abonnement</shortDescription>
+        <value>La vente, le transfert, la fermeture ou le changement d&apos;adresse du Client n&apos;aura aucun effet ni aucune conséquence sur les obligations du Client. Le Contrat ne peut pas être cédé par le Client sans le consentement préalable écrit d’Azergo, lequel ne sera pas refusé sans motif raisonnable. Azergo, à sa seule discrétion, pourra céder le Contrat sans le consentement préalable de l&apos;Abonné.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_divers_1</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte divers partie 1 contrats</shortDescription>
+        <value>Le présent Contrat constitue le seul accord entre les parties concernant l&apos;objet des présentes et remplace tout 
+                accord, engagement ou promesse antérieure orale ou écrite. Aucune modification du présent Contrat ne sera acceptée 
+                sauf si elle est faite par écrit et signée par chaque partie. Les dispositions du présent Contrat sont indépendantes ; 
+                dans l&apos;hypothèse où l&apos;une des clauses ou dispositions du Contrat serait jugée invalide ou inapplicable, en totalité 
+                ou en partie, cette invalidité s&apos;appliquera seulement à ladite clause ou disposition, ou à une partie de celle-ci, 
+                et n&apos;affectera aucune autre clause ou disposition du Contrat.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_divers_2</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte divers partie 2 contrats</shortDescription>
+        <value>Le signataire du présent Contrat agit au nom du Client 
+                et reconnait et garantit qu&apos;il dispose du pouvoir de signer le présent Contrat et d&apos;engager le Client. Le Client 
+                reconnait à Azergo le droit de citer sa marque ou sa raison sociale a titre informatif ou promotionnel et de faire 
+                référence à la transaction intervenue entre eux, dans les conditions traditionnellement admises par les usages 
+                commerciaux.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_duree_de_validite_du_contrat_resiliation_1</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat de location) partie 1</shortDescription>
+        <value>Le présent Contrat est conclu pour la durée d’engagement indiquée dans ce document, et sera tacitement reconduit au
+terme du délai contractuel aux mêmes conditions (à l’exception du loyer qui sera révisé au tarif catalogue en
+vigueur lors de la reconduction), pour des durées successives forfaitaires de 12 mois, sauf dénonciation expresse</value>
+    </labels>
+    <labels>
+        <fullName>Texte_duree_de_validite_du_contrat_resiliation_2</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat de location) partie 2</shortDescription>
+        <value>par lettre recommandée avec accusé de réception par l’une ou l’autre des parties dans les 3 mois précédant ledit terme. Le Client pourra procéder à une résiliation anticipée de Contrat, sous réserve de l’accord par Azergo. Dans cette hypothèse,</value>
+    </labels>
+    <labels>
+        <fullName>Texte_duree_de_validite_du_contrat_resiliation_3</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Durée de validité du Contrat/ Résiliation (contrat de location) partie 3</shortDescription>
+        <value>le Client sera redevable d’une indemnité de résiliation représentant la moitié des loyers restant à courir jusqu’au terme normal du Contrat.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_entretien_de_lequipement_responsabilite_1</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte entretien de l’équipement / responsabilité partie 1</shortDescription>
+        <value>L’entretien classique de l’Équipement après installation, reste à la charge du Client, ainsi que le changement des recharges
+                de consommable (sauf si un contrat de maintenance a été souscrit).</value>
+    </labels>
+    <labels>
+        <fullName>Texte_entretien_de_lequipement_responsabilite_2</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte entretien de l’équipement / responsabilité partie 2</shortDescription>
+        <value>L’Équipement et les consommables fournis par Azergo
+                ne peuvent être modifiés sans son accord écrit express et le cas échéant sans son assistance. Le Client ne doit apporter
+                aucune modification à l’Équipement ; de même toute utilisation de produits consommables non fournis par Azergo est
+                formellement interdite.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_entretien_de_lequipement_responsabilite_3</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte entretien de l’équipement / responsabilité partie 3</shortDescription>
+        <value>Toute violation de ces règles entraînerait la nullité de la garantie et exonérerait totalement Azergo de sa
+responsabilité pour quelque incident ou dommage que ce soit.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_entretien_de_lequipement_responsabilite_4</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte entretien de l’équipement / responsabilité partie 4</shortDescription>
+        <value>En outre et dans le cas le la violation de
+ces règles, Azergo se réserve le droit de retirer l’Équipement sans pour autant que le Client ne soit dégagé de
+ses obligations découlant du présent Contrat.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_essai_part_2</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte_essai_part_2</shortDescription>
+        <value>nous souhaitons porter à votre attention les informations suivantes :</value>
+    </labels>
+    <labels>
+        <fullName>Texte_facturation_et_modalites_de_reglement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte facturation et modalités de règlement</shortDescription>
+        <value>Une facture sera émise à chaque expédition de filtre selon la fréquence indiquée dans ce contrat. Ces factures sont payées par le Client au moyen d’un avis de prélèvement, dont l’autorisation doit être maintenue pendant toute la durée du Contrat, ou par tout moyen à sa convenance. Les loyers sont fermes, la fréquence de paiement des loyers est mentionnée au début de ce contrat, et restent fixes pendant la durée initiale du Contrat, sous la réserve d’une variation du taux de la TVA ou du régime fiscal applicable à cette location. Dans ces hypothèses, Azergo est autorisée, de plein droit, sans formalité préalable, à pratiquer tout ajustement. Tout retard de paiement sera soumis à des intérêts de retard fixés à 3 fois le taux d’intérêt légal en vigueur.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_garanties_legales_contrat_d_abonnement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte garanties légales contrat d&apos;abonnement</shortDescription>
+        <value>Azergo étend à 5 ans la garantie de l’équipement concerné par l’abonnement filtre du client, à l’exception de la gamme « BLUE » dont la garantie ne pourra être étendue. Cette garantie couvre les vices ou défauts affectant l’Équipement ou qui pourraient en empêcher l’usage, conformément aux articles 1721 à 1724 du Code Civil et dans les conditions prévues à l’article 1.3 ci-dessous.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_garanties_legales_contrat_de_location</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte garanties légales contrat de location</shortDescription>
+        <value>Azergo garantit le Client pendant toute la durée du Contrat de tous vices ou défauts affectant l’Équipement ou
+qui pourraient en empêcher l’usage, conformément aux articles 1721 à 1724 du Code Civil et dans les conditions
+prévues à l’article 1.3 ci-dessous.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_loyers</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte_loyers</shortDescription>
+        <value>Les loyers sont payés par le Client au moyen d’un avis de prélèvement, dont l’autorisation doit être maintenue 
+                pendant toute la durée du Contrat, ou par tout moyen à sa convenance. Les loyers sont fermes, la fréquence de 
+                paiement des loyers est mentionnée au début de ce contrat, et restent fixes pendant la durée initiale du Contrat, 
+                sous la réserve d’une variation du taux de la TVA ou du régime fiscal applicable à cette location. Dans ces 
+                hypothèses, Azergo est autorisée, de plein droit, sans formalité préalable, à pratiquer tout ajustement. Tout 
+                retard de paiement sera soumis à des intérêts de retard fixés à 3 fois le taux d’intérêt légal en vigueur.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_maintenance_et_assistance</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte maintenance et assistance</shortDescription>
+        <value>En cas de dysfonctionnement constaté par le Client et notifié par écrit à Azergo, Azergo procèdera à la réparation
+                 gracieuse ou à l’échange de l’Équipement sous 5 jours après réception dans ses locaux de l’Équipement défectueux, 
+                 à ses propres frais. La maintenance de l&apos;Equipement ne sera effectuée gracieusement que dans le cadre d’une 
+                 utilisation normale et appropriée de l’Équipement. En revanche, dans tous les cas où la panne ou le 
+                 dysfonctionnement résulterait d’une utilisation non conforme de la part du client, Azergo transmettra un devis 
+                 concernant les réparations exigées par l’état de l’Équipement. À réception de la validation du client, Azergo 
+                 effectuera les réparation et retournera l’Equipement au Client.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_mise_disposition_de_lequipement_1</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte mise disposition de l&apos;équipement partie 1</shortDescription>
+        <value>Le Client autorise par la présente Azergo, à installer tout
+Équipement nécessaire pour la réalisation du Service permettant la purification de l’air. Le Client doit faire
+son affaire personnelle pour obtenir les autorisations qui seraient nécessaires à l’utilisation de l’Équipement
+dans ses locaux. Le Client ne peut, directement ou indirectement, vendre, nantir, mettre en gage, ou
+autrement disposer de ou grever l’Équipement fourni par Azergo,</value>
+    </labels>
+    <labels>
+        <fullName>Texte_mise_disposition_de_lequipement_2</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte mise disposition de l&apos;équipement partie 2</shortDescription>
+        <value>À partir de la livraison, et tant que l’Équipement restera sous sa garde, le Client s’engage à
+souscrire une assurance garantissant tant l’Équipement que sa responsabilité civile, s’acquittera des primes et
+en justifiera auprès d’Azergo sur simple demande.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_mise_disposition_de_lequipement_partie_en_gras</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte mise à disposition de l’équipement partie en gras</shortDescription>
+        <value>qui reste la seule propriété
+d’Azergo</value>
+    </labels>
+    <labels>
+        <fullName>Texte_mise_essai_part_1</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte_mise_essai_part_1</shortDescription>
+        <value>Suite à la mise en essai,</value>
+    </labels>
+    <labels>
+        <fullName>Texte_restitution_de_lequipement</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte restitution de l&apos;équipement</shortDescription>
+        <value>Le Client devra restituer à Azergo l’Équipement en bon état, immédiatement après l&apos;expiration ou la résiliation
+                anticipée du présent Contrat. En cas de destruction ou de perte de l’Équipement, celui-ci sera facturé à sa valeur
+                de remplacement au tarif catalogue en vigueur. La non-restitution de l’Équipement par le Client, dans les 15 jours
+                suivant la fin du contrat entrainera une nouvelle facturation irrévocable et forfaitaire de 3 mois de loyers,
+                renouvelable tant que l’Équipement ne sera pas restitué.</value>
+    </labels>
+    <labels>
+        <fullName>Texte_retour_essai_part_1</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte_retour_essai_part_1</shortDescription>
+        <value>Suite au retour d’essai,</value>
+    </labels>
+    <labels>
+        <fullName>Texte_satisfaction_utilisateur_3DConcept</fullName>
+        <categories>Formulaire de satisfaction</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Satisfaction Utilisateur 3DConcept</shortDescription>
+        <value>Comment qualifieriez-vous l’expérience vécue avec votre conseiller(e) 3D Concept lors de votre aménagement de poste de travail ?</value>
+    </labels>
+    <labels>
+        <fullName>Texte_satisfaction_utilisateur_Azergo</fullName>
+        <categories>Formulaire de satisfaction</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte Satisfaction Utilisateur Azergo</shortDescription>
+        <value>Comment qualifieriez-vous le service de votre conseiller(e) Azergo lors de votre aménagement de votre poste de travail ?</value>
+    </labels>
+    <labels>
+        <fullName>Texte_solutions_non_mises_en_essai</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Texte solutions non mises en essai</shortDescription>
+        <value>Elles seront toutefois un complément nécessaire à l’aménagement.</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Engagements_Azergo</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre_Engagements_Azergo_Contrats</shortDescription>
+        <value>Engagements d’Azergo</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Equipements_mis_en_place_par_site</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Equipements mis en place par site</shortDescription>
+        <value>Equipements mis en place par site</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Etat_du_materiel</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre_Etat_du_matériel</shortDescription>
+        <value>Etat du matériel</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Facturation_Modalites_de_reglement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Facturation / Modalités de règlement</shortDescription>
+        <value>Facturation / Modalités de règlement</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Impayes_et_Non_respect_des_obligations</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Impayés et Non respect des obligations Contrats</shortDescription>
+        <value>Impayés et Non respect des obligations</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Information_complementaire</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Information complémentaire</shortDescription>
+        <value>Information complémentaire</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Le_souscripteur</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre_Le_souscripteur_contrats</shortDescription>
+        <value>Le souscripteur</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Mise_essai</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Mise à essai</shortDescription>
+        <value>Mise à essai</value>
+    </labels>
+    <labels>
+        <fullName>Titre_Synthese_d_intervention</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Synthèse d&apos;intervention</shortDescription>
+        <value>Synthèse d&apos;intervention</value>
+    </labels>
+    <labels>
+        <fullName>Titre_abonnements_filtres_mis_en_place_par_site</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre abonnements filtres mis en place par site</shortDescription>
+        <value>Abonnements Filtres mis en place par site</value>
+    </labels>
+    <labels>
+        <fullName>Titre_attribution_de_juridiction</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre attribution de juridiction contrats</shortDescription>
+        <value>Attribution de juridiction</value>
+    </labels>
+    <labels>
+        <fullName>Titre_cession_du_contrat</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre cession du contrat_contrats</shortDescription>
+        <value>Cession du Contrat</value>
+    </labels>
+    <labels>
+        <fullName>Titre_commentaires_specifiques</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre commentaires spécifiques</shortDescription>
+        <value>Commentaires spécifiques</value>
+    </labels>
+    <labels>
+        <fullName>Titre_description_equipement</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre description équipement</shortDescription>
+        <value>Description équipement</value>
+    </labels>
+    <labels>
+        <fullName>Titre_divers</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre divers contrats</shortDescription>
+        <value>Divers</value>
+    </labels>
+    <labels>
+        <fullName>Titre_duree_de_validite_du_contrat_resiliation</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre Durée de validité du Contrat/ Résiliation contrats</shortDescription>
+        <value>Durée de validité du Contrat/ Résiliation</value>
+    </labels>
+    <labels>
+        <fullName>Titre_engagement_du_client</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre engagement du client</shortDescription>
+        <value>Engagement du Client</value>
+    </labels>
+    <labels>
+        <fullName>Titre_entretien_de_lequipement_responsabilite</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre entretien de l’équipement / responsabilité</shortDescription>
+        <value>Entretien de l’Equipement / Responsabilité</value>
+    </labels>
+    <labels>
+        <fullName>Titre_facturation_et_modalites_de_reglement</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre facturation et modalités de règlement</shortDescription>
+        <value>Facturation et modalités de règlement</value>
+    </labels>
+    <labels>
+        <fullName>Titre_fourniture_de_filtres</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre fourniture de filtres</shortDescription>
+        <value>Fourniture de filtres</value>
+    </labels>
+    <labels>
+        <fullName>Titre_garanties_legales</fullName>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre garanties légales contrats</shortDescription>
+        <value>Garanties légales</value>
+    </labels>
+    <labels>
+        <fullName>Titre_loyers</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre loyers</shortDescription>
+        <value>Loyers</value>
+    </labels>
+    <labels>
+        <fullName>Titre_loyers_modalites_de_reglement</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre loyers/modalités de règlement</shortDescription>
+        <value>Loyers/Modalités de règlement</value>
+    </labels>
+    <labels>
+        <fullName>Titre_maintenance_et_assistance</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre maintenance et assistance</shortDescription>
+        <value>Maintenance et assistance</value>
+    </labels>
+    <labels>
+        <fullName>Titre_mise_disposition_de_lequipement</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre mise à disposition de l’équipement</shortDescription>
+        <value>Mise à disposition de l’Equipement</value>
+    </labels>
+    <labels>
+        <fullName>Titre_prix_total_mensuel_HT</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre prix total mensuel HT</shortDescription>
+        <value>Prix Total Mensuel HT</value>
+    </labels>
+    <labels>
+        <fullName>Titre_prix_total_semestriel_HT</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre prix total semestriel HT</shortDescription>
+        <value>Prix Total Semestriel HT</value>
+    </labels>
+    <labels>
+        <fullName>Titre_prix_unitaire_mensuel_HT</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre prix unitaire mensuel HT</shortDescription>
+        <value>Prix Unitaire Mensuel HT</value>
+    </labels>
+    <labels>
+        <fullName>Titre_prix_unitaire_semestriel_HT</fullName>
+        <categories>Contrat d&apos;Abonnement</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre prix unitaire semestriel HT</shortDescription>
+        <value>Prix Unitaire Semestriel HT</value>
+    </labels>
+    <labels>
+        <fullName>Titre_quantite</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre_quantité</shortDescription>
+        <value>Quantité</value>
+    </labels>
+    <labels>
+        <fullName>Titre_reference_article</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre référence article</shortDescription>
+        <value>Référence article</value>
+    </labels>
+    <labels>
+        <fullName>Titre_remise</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre remise</shortDescription>
+        <value>Remise</value>
+    </labels>
+    <labels>
+        <fullName>Titre_restitution_de_lequipement</fullName>
+        <categories>Contrat de Location</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre restitution de l’équipement</shortDescription>
+        <value>Restitution de l’Equipement</value>
+    </labels>
+    <labels>
+        <fullName>Titre_retour_d_essai</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Titre retour d&apos;essai</shortDescription>
+        <value>Retour d&apos;essai</value>
+    </labels>
+    <labels>
+        <fullName>Toute_degradation_ou_alteration</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Toute dégradation ou altération</shortDescription>
+        <value>Toute dégradation, altération ou vol du matériel prêté pourra entraîner la facturation de celui-ci</value>
+    </labels>
+    <labels>
+        <fullName>Type_d_environnement</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Type d&apos;environnement</shortDescription>
+        <value>Type d&apos;environnement</value>
+    </labels>
+    <labels>
+        <fullName>VF_QC_Contact_ErrorMessage_MobilePhone</fullName>
+        <categories>QuickCreate_Contact</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>VF_QC_Contact_ErrorMessage_MobilePhone</shortDescription>
+        <value>Le numéro de téléphone mobile ne peut pas dépasser 20 caractères.</value>
+    </labels>
+    <labels>
+        <fullName>VF_QC_Contact_ErrorMessage_Phone</fullName>
+        <categories>QuickCreate_Contact</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>VF_QC_Contact_ErrorMessage_Phone</shortDescription>
+        <value>Le numéro de téléphone ne peut pas dépasser 20 caractères.</value>
+    </labels>
+    <labels>
+        <fullName>Visuel_non_contractuel</fullName>
+        <categories>SYNTHESE D&apos;INTERVENTION</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Visuel_non_contractuel</shortDescription>
+        <value>Visuel non contractuel</value>
+    </labels>
+    <labels>
+        <fullName>Vous_pouvez_acceder_aux_fiches_techniques</fullName>
+        <categories>VF COMP Fiche technique - Synthèse d&apos;intervention</categories>
+        <language>fr</language>
+        <protected>false</protected>
+        <shortDescription>Vous pouvez accéder aux fiches techniques</shortDescription>
+        <value>Vous pouvez accéder aux fiches techniques et certains modes d&apos;emploi des solutions identifiées pour cet aménagement (testées ou non) en cliquant sur le nom de celles-ci :</value>
+    </labels>
+    <labels>
+        <fullName>closingEmail_defaultFolder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>closingEmail_defaultFolder</shortDescription>
+        <value>Modèles pour closing</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_cancelButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_cancelButton</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_cancelButtonAlt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_cancelButtonAlt</shortDescription>
+        <value>Cancel updates</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_cancelRowUpdate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_cancelRowUpdate</shortDescription>
+        <value>Cancel row updates</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_closeButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_closeButton</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_configureFilters</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_configureFilters</shortDescription>
+        <value>Configure filters</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_configureOrder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_configureOrder</shortDescription>
+        <value>Configure order</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_errorMessageSuffix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_errorMessageSuffix</shortDescription>
+        <value>Error while getting table results!! \n</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_errorMessageTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_errorMessageTitle</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_loading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_loading</shortDescription>
+        <value>Loading</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_pinListview</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_pinListview</shortDescription>
+        <value>Pin list view</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_refreshList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_refreshList</shortDescription>
+        <value>Refresh list</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_results</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_results</shortDescription>
+        <value>results</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_saveButton</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_saveButton</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_saveButtonAlt</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_saveButtonAlt</shortDescription>
+        <value>Save updates</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_selected</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_selected</shortDescription>
+        <value>selected</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_settings</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_settings</shortDescription>
+        <value>settings</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_successMessageSuffix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_successMessageSuffix</shortDescription>
+        <value>Records Updated Successfully!!</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_successMessageTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_successMessageTitle</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_switchListview</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_switchListview</shortDescription>
+        <value>Switch list view</value>
+    </labels>
+    <labels>
+        <fullName>enhancedListview_unpinListview</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>enhancedListview_unpinListview</shortDescription>
+        <value>Un pin listview</value>
+    </labels>
+    <labels>
+        <fullName>ers_CancelButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Filter</shortDescription>
+        <value>Clear Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearFilterButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear All Filters</shortDescription>
+        <value>Clear All Filters</value>
+    </labels>
+    <labels>
+        <fullName>ers_ClearSelectionButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Clear Selection</shortDescription>
+        <value>Clear Selection</value>
+    </labels>
+    <labels>
+        <fullName>ers_ColumnHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Column</shortDescription>
+        <value>Column</value>
+    </labels>
+    <labels>
+        <fullName>ers_EmptyTableMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty</shortDescription>
+        <value>This table currently has no data to display</value>
+    </labels>
+    <labels>
+        <fullName>ers_ErrorRequiredEntry</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Required</shortDescription>
+        <value>This is a required entry.  At least 1 row must be selected.</value>
+    </labels>
+    <labels>
+        <fullName>ers_FilterHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Filter</shortDescription>
+        <value>Filter</value>
+    </labels>
+    <labels>
+        <fullName>ers_LabelHeader</fullName>
+        <categories>headers</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Label</shortDescription>
+        <value>Label</value>
+    </labels>
+    <labels>
+        <fullName>ers_SaveButton</fullName>
+        <categories>buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>ers_SearchPlaceholder</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search Term</shortDescription>
+        <value>Enter search term ...</value>
+    </labels>
+    <labels>
+        <fullName>ers_SetFilterAction</fullName>
+        <categories>actions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Set Filter</shortDescription>
+        <value>Set Filter</value>
+    </labels>
+    <labels>
+        <fullName>fsc_AccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccessLevel</shortDescription>
+        <value>Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Back</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ButtonIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ButtonIsNotSupportedMessage</shortDescription>
+        <value>Following buttons are note supported:</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ConditionLogicHelpText</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConditionLogicHelpText</shortDescription>
+        <value>Use parentheses, AND, OR, and NOT to customize the logic. For example, if you enter “(1 AND 2 AND 3) OR 4”, the flow evaluates whether the first three conditions are true or only the fourth condition is true.</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Delete</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>fsc_FieldIsNotSupportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FieldIsNotSupportedMessage</shortDescription>
+        <value>Following fields are not supported:</value>
+    </labels>
+    <labels>
+        <fullName>fsc_FieldTypeNotSuportedMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>fsc_FieldTypeNotSuportedMessage</shortDescription>
+        <value>You provided an unsupported value for the DataTypeFilter input on Object and Field Picker. Currently the only supported value is ’picklist’</value>
+    </labels>
+    <labels>
+        <fullName>fsc_For</fullName>
+        <categories>Buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>For</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Key_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Key Label</shortDescription>
+        <value>Key</value>
+    </labels>
+    <labels>
+        <fullName>fsc_LackingPermissions</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LackingPermissions</shortDescription>
+        <value>You don\&apos;t have the proper permissions for ths action</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ManagerEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ManagerEmptyMessage</shortDescription>
+        <value>&quot;Manager APEX Class&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_MultipleGroupsForRole</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MultipleGroupsForRole</shortDescription>
+        <value>There are multiple groups for that role</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Name</fullName>
+        <categories>quicklinks, Labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>fsc_NonePicklistValueLabel</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonePicklistValueLabel</shortDescription>
+        <value>-- None --</value>
+    </labels>
+    <labels>
+        <fullName>fsc_OWDReadWrite</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OWDReadWrite</shortDescription>
+        <value>Sharing Settings must be private or public read/write to enable manual sharing</value>
+    </labels>
+    <labels>
+        <fullName>fsc_OwnerAdminModify</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OwnerAdminModify</shortDescription>
+        <value>Only the record owner or administrators can modify permissions</value>
+    </labels>
+    <labels>
+        <fullName>fsc_PublicGroups</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PublicGroups</shortDescription>
+        <value>Public Groups</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Queues</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Queues</shortDescription>
+        <value>Queues</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Read</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Read</shortDescription>
+        <value>Read</value>
+    </labels>
+    <labels>
+        <fullName>fsc_ReadWrite</fullName>
+        <categories>labels, buttons</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ReadWrite</shortDescription>
+        <value>Read / Write</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Reason</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reason</shortDescription>
+        <value>Reason</value>
+    </labels>
+    <labels>
+        <fullName>fsc_RelatedUsers</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelatedUsers</shortDescription>
+        <value>Related Users</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Roles</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Roles</shortDescription>
+        <value>Roles</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Search</fullName>
+        <categories>Actions,Buttons,quicklinks</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search in</shortDescription>
+        <value>Search in</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SearchFor</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SearchFor</shortDescription>
+        <value>For</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SetAccessLevel</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SetAccessLevel</shortDescription>
+        <value>Set Access Level</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedAddCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedAddCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Add Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedButtonsEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedButtonsEmptyMessage</shortDescription>
+        <value>&quot;Supported Buttons&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_SupportedEditCapabilitiesEmptyMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SupportedEditCapabilitiesEmptyMessage</shortDescription>
+        <value>&quot;Edit Capabilities&quot; can not be empty</value>
+    </labels>
+    <labels>
+        <fullName>fsc_TooManyResultsMessage</fullName>
+        <categories>messages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TooManyResultsMessage</shortDescription>
+        <value>Your search found more than 200 results.  Keep typing to make it more specific</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Type</fullName>
+        <categories>Buttons,Filters,Title</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Type</shortDescription>
+        <value>Type</value>
+    </labels>
+    <labels>
+        <fullName>fsc_UserOrGroup</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserOrGroup</shortDescription>
+        <value>User Or Group</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Users</fullName>
+        <categories>labels</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Users</shortDescription>
+        <value>Users</value>
+    </labels>
+    <labels>
+        <fullName>fsc_Value_Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Value Label</shortDescription>
+        <value>Value</value>
+    </labels>
+</CustomLabels>

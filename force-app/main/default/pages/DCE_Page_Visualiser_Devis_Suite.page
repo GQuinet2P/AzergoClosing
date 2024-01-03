@@ -1,0 +1,59 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-18-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   05-12-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<apex:page standardController="Quote" renderAs="pdf" applyBodyTag="false" >
+    <head>
+        <style type="text/css" media="print">
+            @page {
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+
+            div.header {
+                padding: 10px;
+                position: running(header);
+            }
+
+            div.footer {
+                display: block;
+                padding: 5px;
+                position: running(footer);
+            }
+
+            .pagenumber:before {
+                content: counter(page);
+            }
+
+            .pagecount:before {
+                content: counter(pages);
+            }
+            .header_position{
+                display: inline-block;
+                float: right;
+                font-size:11px;
+            } 
+
+            .header_item {
+                clear:both;
+                
+            }
+            
+        </style>
+    </head>
+    
+    <div class="content">
+     <c:DCE_VF_COMP_Devis inputQuoteID="{!Quote.Id}"/>
+    </div>
+
+</apex:page>

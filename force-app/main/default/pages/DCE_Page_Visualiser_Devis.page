@@ -1,0 +1,4 @@
+<apex:page standardController="Quote" renderAs="PDF" action="{!attachDevisPDF}" extensions="DCE_Attach_Devis_PDF" applyBodyTag="false" standardStylesheets="false" showHeader="false">    
+    <apex:outputText value="{!Quote.QuoteNumber}" style="display: none"/>
+    <apex:outputText value="{!Quote.Opportunity.Name}" style="display: none"/>
+</apex:page>

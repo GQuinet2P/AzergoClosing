@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MasterListviewConfig__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Link to the main listiew config.
+This is used when creating listviews based on another listview by a user. the listview can be made user only or shared like standard listviews.
+Linking a listview to a master allow it to be selectable in the app built on a master listview.</description>
+    <externalId>false</externalId>
+    <label>Master Listview Config</label>
+    <referenceTo>P2C_EnhancedListviewConfig__c</referenceTo>
+    <relationshipLabel>Enhanced Listview configs</relationshipLabel>
+    <relationshipName>Enhanced_Listview_configs</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,95 @@
+<template>
+    <div class="backdrop" onclick={handleClickOutside} onkeyup={handleKey}></div>
+    <lightning-card title={label.orderEditorTitle} icon-name="standard:catalog" class="slds-popover" style={boxClass}>
+        <h3 slot="title">
+            {label.orderEditorTitle}
+        </h3>
+
+        <template if:true={orders}>
+            <div><span>Tris actifs :</span></div>
+            <div class="slds-grid slds-grid_vertical slds-box slds-theme_shade" style="margin: 5px 5px 25px 5px; padding:0;">
+                <div style="width: 680px; overflow-y: hidden; margin: 5px 0px 0px 0px; padding-right: 10px;">
+                    <div class="slds-grid slds-grid slds-gutters" style="padding-left:10px; padding-right: 20px; height: 40px;">
+                        <template for:each={orders} for:item="order">
+                            <c-dragable-listview-sort-item key={order.sortOrder} item-is-first={order.isFirst} item-is-last={order.isLast} item-label={order.fieldLabel} item-direction={order.direction} item-direction-icon={order.directionIcon} item-order={order.sortOrder} onchangeitemdirection={handleChangeOrderDirection}></c-dragable-listview-sort-item>
+                        </template>                
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template if:true={orders}>
+            <div><span>Champs triables :</span></div>
+            <div class="slds-grid slds-grid_vertical slds-box slds-theme_shade" style="margin: 5px; padding:0;">
+                <div style="width: 680px; overflow-y: hidden; margin: 5px 0px 0px 0px; padding-right: 10px;">
+                    <div class="slds-grid slds-grid slds-gutters" style="padding-left:10px; padding-right: 20px; height: 40px;">
+                        <template for:each={orders} for:item="order">
+                            <c-dragable-listview-sort-item key={order.sortOrder} item-is-first={order.isFirst} item-is-last={order.isLast} item-label={order.fieldLabel} item-direction={order.direction} item-direction-icon={order.directionIcon} item-order={order.sortOrder}></c-dragable-listview-sort-item>
+                        </template>                
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- <template if:true={orders}>
+            <div style="width: 690px; overflow-y: hidden; margin-right: 0; margin-left: 0; padding-right: 10px;">
+                <div class="slds-grid slds-grid slds-gutters" style="padding-left:10px; padding-right: 20px; height: 40px;"> -->
+                <!-- <div class="slds-grid slds-grid slds-gutters" style="padding-left:10px; padding-right: 20px; height: 40px;" ondrop={handleDrop}> -->
+                    <!-- <template for:each={orders} for:item="order">
+                        <c-dragable-listview-sort-item key={order.sortOrder} item-is-first={order.isFirst} item-is-last={order.isLast} item-label={order.fieldLabel} item-direction={order.direction} item-order={order.sortOrder}></c-dragable-listview-sort-item> -->
+                        <!-- <div key={order.sortOrder} class="slds-col slds-box" style="margin: 5px 5px 5px 10px; height: 40px;" ondragstart={handleDragStart}> 
+                            <div class="slds-grid slds-grid slds-gutters">
+                                <div class="slds-col slds-size_5-of-6" data-id={order.sortOrder} onclick={handleChangeDirection}> 
+                                    {order.fieldName}&nbsp;(<b>{order.direction}</b>)
+                                </div>
+                                <div class="slds-col slds-size_1-of-6" data-id={order.sortOrder}>
+                                    <template if:true={order.showUp}>
+                                        <lightning-button-icon icon-name="utility:arrowup" variant="bare" class="slds-m-left_xx-small" alternative-text={label.moveUpOrder} title={label.moveUpOrder} onclick={handleMoveUp}></lightning-button-icon>
+                                    </template>
+                                    <template if:true={order.showDown}>
+                                        <lightning-button-icon icon-name="utility:arrowdown" variant="bare" class="slds-m-left_xx-small" alternative-text={label.moveDownOrder} title={label.moveDownOrder} onclick={handleMoveDown}></lightning-button-icon>
+                                    </template>
+                                    <lightning-button-icon icon-name="utility:close" variant="bare" class="slds-m-left_xx-small" alternative-text={label.removeOrder} title={label.removeOrder} onclick={handleRemove}></lightning-button-icon>
+                                </div>
+                            </div>
+                        </div> -->
+                    <!-- </template>                
+                </div>
+            </div>
+        </template> -->
+
+        
+        <!-- <div slot="footer"> -->
+        <!-- <div class="slds-grid slds-grid_vertical slds-box slds-theme_shade" style="margin-left: 5px; margin-right: 5px; padding:0;">
+            <div class="slds-col" style="margin: 0;padding: 0;"> -->
+                <!-- <div style="width: 300px; margin-right: 0; margin-left: auto;"> -->
+                    <!-- <div class="slds-grid slds-gutters" style="width: 100%">
+                        <div class="slds-col slds-size_3-of-3" style="margin-left: 10px; margin-right: 0px; padding-left: 5px; padding-right: 5px;">
+                            <lightning-combobox 
+                                name="FieldPicker" 
+                                label={label.fieldLabel} 
+                                placeholder={label.selectFieldHolder} 
+                                options={describedFields} 
+                                onchange={handleChangeField}>
+                            </lightning-combobox>
+                        </div> -->
+                        <!-- <div class="slds-col slds-size_1-of-3" style="margin-left: 0px; margin-right: 10px; padding-left: 5px; padding-right: 5px;">
+                            <lightning-combobox 
+                                name="ConditionPicker" 
+                                label={label.conditionLabel}
+                                placeholder={label.selectConditionHolder} 
+                                options={conditionOptions} 
+                                onchange={handleChangeOption}>
+                            </lightning-combobox>
+                        </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="slds-col" style="padding-top: 10px; padding-bottom: 10px; width: 100%; text-align: center;">
+                <lightning-button variant="brand" label={label.addOrder} title={label.addOrder} icon-name="utility:add" class="slds-m-left_x-small" onclick={handleAddOrderBy}></lightning-button>
+            </div> -->
+        <!-- </div> -->
+
+    </lightning-card>
+</template>

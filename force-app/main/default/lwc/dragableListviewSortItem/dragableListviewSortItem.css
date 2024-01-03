@@ -1,0 +1,54 @@
+.over {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    width: 10px;
+    height: 30px;
+    float:left;
+    position: relative;
+}
+
+.itemStyle{
+    border: 2px solid grey;
+    border-radius: 12px;
+    height: 25px;
+    padding: 2px 5px 5px 5px;
+    float:left;
+    background-color: whitesmoke;
+}
+
+.itemShadow {
+    opacity: 20%;
+}
+
+.itemLabel {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    float:left;
+    margin: 0;
+    padding: 0px;
+    max-width: 100px;    
+}
+
+.itemInlineBlock {
+    display: inline-block;
+}
+
+.link{
+    background: none;
+    margin: 0;
+    padding: 0;
+    width: 10px;
+    height: 30px;
+    float:left;
+}
+
+.alpha15{
+    opacity: 15%;
+}
+
+.THIS {
+    font-size: 6px;
+    color: darkslategrey;
+}

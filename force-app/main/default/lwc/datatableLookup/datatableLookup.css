@@ -1,0 +1,22 @@
+.backdrop {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .content {
+    z-index: 1000;
+  }
+
+.spanLink {
+    color: blue;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+.spanLink:hover {
+    text-decoration:underline;
+}

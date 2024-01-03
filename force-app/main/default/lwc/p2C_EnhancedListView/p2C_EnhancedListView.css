@@ -1,0 +1,21 @@
+.THIS .slds-spinner {
+    position: fixed;
+}
+
+.removeOrderPending {
+    background-color: aliceblue;
+}
+
+.removeOrderHighlight {
+    background-color: darkred;
+}
+
+.over {
+    background-color: grey;
+    margin: 0;
+    padding: 0;
+    width: 10px;
+    height: 30px;
+    float:left;
+    position: relative;
+}

@@ -1,0 +1,65 @@
+<template>
+    <div data-id="datatableLookup" class="picklist-container">
+
+        <template if:false={editMode}>
+            <template if:true={allowEdit}>
+                <span class="slds-grid slds-grid_align-end slds-clearfix">
+                    <div class="slds-truncate slds-float_left" style="width: 100%;">
+                        <span class="spanLink" onmouseover={handleMouseOverLink} onmouseout={handleMouseOutLink} onclick={navigateToUrl}>{fieldValue}</span>
+                        <!-- <a href={linkUrl} target="_blank" onmouseover={handleMouseOverLink} onmouseout={handleMouseOutLink}>{fieldValue}</a> -->
+                    </div>
+                    <div class="slds-float_right">
+                        <lightning-button-icon class="slds-button slds-button_icon slds-cell-edit__button slds-m-left_x-small" icon-name="utility:edit" variant="bare" alternative-text="Edit" title="Edit" onclick={handleSwitchMode}></lightning-button-icon>
+                    </div>
+                </span>
+            </template>
+            <template if:false={allowEdit}>
+                <span class="slds-grid slds-grid_align-end">
+                    <div class="slds-truncate" style="width: 100%;">
+                        <span class="spanLink" onmouseover={handleMouseOverLink} onmouseout={handleMouseOutLink} onclick={navigateToUrl}>{fieldValue}</span>
+                        <!-- <a href={linkUrl} target="_blank" onmouseover={handleMouseOverLink} onmouseout={handleMouseOutLink}>{fieldValue}</a> -->
+                    </div>
+                </span>
+            </template>
+        </template>
+    
+        <template if:true={editMode}>
+            <div class="backdrop" onclick={handleClickOutside} onkeyup={handleKey}></div>
+            <input type="checkbox" name="applyToAll" value="Appliquer le changement à toutes les lignes séléctionnées" onchange={handleApplyToAll} />
+            <section data-id="editContainer" class="slds-popover slds-popover_edit" style={editPopupStyle} role="dialog" onkeyup={handleKey} aria-label="Edit lookup" tabindex="-1">
+                <div class="slds-form-element" onkeyup={handleKey}>
+                    <div class="slds-form-element__control" onkeyup={handleKey}>
+                        <div class="slds-combobox_container content" onkeyup={handleKey}>
+                            <div class="slds-combobox" aria-expanded="false" aria-haspopup="listbox" role="combobox" onkeyup={handleKey}>
+                                <div class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right" role="none" onkeyup={handleKey}>
+                                    <lightning-input class="slds-input slds-combobox__input" id="combobox-id-1"
+                                        aria-autocomplete="list" aria-controls="listbox-id-1" role="textbox" type="text"
+                                        placeholder="Search..." onchange={handleSearch} onkeyup={handleKey} value={searchValue} variant="label-hidden">
+                                    </lightning-input>
+                                </div>
+                                <template if:true={searchResults}>
+                                    <div class="slds-combobox_container">
+                                        <div id="listbox-id-1" class="slds-dropdown slds-dropdown_fluid" role="listbox">
+                                            <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+                                                <template for:each={searchResults} for:item="searchResult">
+                                                    <li key={searchResult.Id} role="presentation" class="slds-listbox__item" >
+                                                        <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small"
+                                                            role="option" data-itemid={searchResult.Id} 
+                                                            data-itemname={searchResult.Name}
+                                                            onclick={handleSelect}>
+                                                                {searchResult.Name}
+                                                        </div>
+                                                    </li>
+                                                </template>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+    </div>
+</template>

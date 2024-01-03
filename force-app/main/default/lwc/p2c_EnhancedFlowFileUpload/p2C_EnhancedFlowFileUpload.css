@@ -1,0 +1,17 @@
+.barStyle {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.centerText {
+    text-align: center;
+}
+.errorBkg {
+    background-color: red;
+    border-radius: 5px;
+    margin: 5px 5px 5px 5px;
+}
+.successBkg {
+    background-color: green;
+    border-radius: 5px;
+    margin: 5px 5px 5px 5px;
+}

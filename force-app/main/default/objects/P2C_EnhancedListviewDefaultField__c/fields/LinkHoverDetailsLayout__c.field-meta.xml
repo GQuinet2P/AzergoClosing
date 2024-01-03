@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LinkHoverDetailsLayout__c</fullName>
+    <description>JSON representation of the layout to use in details popup when the hover option is activated</description>
+    <externalId>false</externalId>
+    <label>Link Hover Details Layout</label>
+    <length>131072</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

@@ -1,0 +1,992 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-17-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   05-12-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+  Modified by        : Marianne ASSOGBAVI 06/2021 & 13/08/2021
+-->
+<apex:component access="global" controller="DCE_Controller_Generate_Devis">
+    <apex:attribute type="String" name="inputQuoteID" description="" assignTo="{!QuoteId}" />
+ 
+    <head>
+        <style type="text/css" media="print">
+            @page {
+                @top-center {
+                    content: element(header);
+                }
+                @bottom-left {
+                    content: element(footer);
+                }
+            }
+            div.header {
+                padding: 10px;
+                position: running(header);
+            }
+
+            div.footer {
+                display: block;
+                padding: 5px;
+                position: running(footer);
+            }
+
+            .pagenumber:before {
+                content: counter(page);
+            }
+
+            .pagecount:before {
+                content: counter(pages);
+            }
+            
+
+            #petiteTaille {
+                font-size: 11px;
+            }
+ 
+            .AllText {
+                font-size: 11px;
+            }
+ 
+            div.content {
+                /*page-break-inside: avoid;*/
+                font-family: Cambria, Georgia, serif;
+                page-break-after: always;
+            }
+ 
+            div.content td,
+            p {
+                page-break-inside: avoid;
+                font-family: Cambria, Georgia, serif;
+ 
+            }
+ 
+            .borders {
+                border: 1px solid black !important;
+                /* padding-left: 10px;*/
+                border-collapse: collapse;
+                font-size: 10px;
+            }
+ 
+            <!-- <apex:stylesheet value="{!URLFOR($Resource.AZERGO_CSS)}"/> -->
+        </style>
+    </head>
+ 
+    <div class="content ">
+        <div class="AllText">
+
+            <!-------------- Changement des logos en fonction de la BU -------------->
+            <apex:image style="vertical-align:middle; width: 20%;" rendered="{!IF(OR(quote.Opportunity.BU__c=='Azergo', ISBLANK(quote.Opportunity.BU__c)),true,false)}" value="{!URLFOR($Resource.Logo_AZERGO)}"/>
+            <apex:image style="vertical-align:middle; width: 20%;" rendered="{!IF(quote.Opportunity.BU__c=='3D Concept', true,false)}" value="{!URLFOR($Resource.Logo_3D_Concept)}"/>
+            
+            <apex:image style="vertical-align:middle; width: 20%;" rendered="{!IF(curentUser.CompanyName=='AZERGO TRAINING',true,false)}"
+                value="{!URLFOR($Resource.Logo_AZERGO_Training)}" />
+            <apex:image style="vertical-align:middle; width: 20%;" rendered="{!IF(quote.Opportunity.BU__c=='Azergo Air',true,false)}"
+                value="{!URLFOR($Resource.Logo_AZERGO_AIR)}" />
+
+            <!-------------- Fin changement des logos en fonction de la BU ------------>
+            
+            <apex:outputPanel >
+
+                <!-- Entête -->
+                <div class="header">
+                    <table class="header_position" style="display: inline-block;float: right;font-size:11px;">
+                        <tr>
+                            <!--- Affichage de cellule du nom de l'opportunité avec couleurs en fonction de la BU -->
+                            <td style="display:{!IF(OR(quote.Opportunity.BU__c == 'Azergo', ISBLANK(quote.Opportunity.BU__c)), '', 'none')}; border-left:6px solid #efab00;" class="header_item">&nbsp;
+                                <b>
+                                    <apex:outputText value="DEVIS n° : " />
+                                    <apex:outputText value="{!quote.QuoteNumber}" /> 
+                                    <apex:outputText rendered="{!quote.Devis_Anonyme__c == false}" value=" - {!quote.Name}" /><!-- Saamiyah - rajout du champ Devis_Anonyme__c TMA 0020-->
+                                    </b> 
+                                    <!-- Modification 18/07/2022 - demande du client d'afficher le nom du devis à la place du nom de l'opportunité {!quote.opportunity.Name}" /> </b> -->
+                            </td>
+                            <td style="display:{!IF(quote.Opportunity.BU__c == 'Azergo Air', '', 'none')}; border-left:6px solid rgb(99, 174, 187);" class="header_item">&nbsp;
+                                <b>
+                                    <apex:outputText value="DEVIS n° : " />
+                                    <apex:outputText value="{!quote.QuoteNumber}" />
+                                    <apex:outputText rendered="{!quote.Devis_Anonyme__c == false}"  value=" - {!quote.Name}" /> <!-- Saamiyah - rajout du champ Devis_Anonyme__c TMA 0020-->
+                                </b>
+                            </td>
+                            <td style="display:{!IF(quote.Opportunity.BU__c == '3D Concept', '', 'none')}; border-left:6px solid #188ac6;" class="header_item">&nbsp;
+                                <b>
+                                    <apex:outputText value="DEVIS n° : " />
+                                    <apex:outputText value="{!quote.QuoteNumber}" /> 
+                                    <apex:outputText rendered="{!quote.Devis_Anonyme__c == false}"  value=" - {!quote.Name}" /> <!-- Saamiyah - rajout du champ Devis_Anonyme__c TMA 0020-->
+                                </b>
+                            </td>
+                            <!-- Fin Affichage  de cellule du nom de l'opportunité avec couleurs en fonction de la BU -->
+                        </tr> 
+                        <tr>
+                            <!---- Affichage de cellule en fonction de la BU ---->
+                            <td style="display: {!IF(OR(quote.Opportunity.BU__c == 'Azergo', ISBLANK(quote.Opportunity.BU__c)), '', 'none')}; border-left:6px solid #efab00; " class="header_item">&nbsp;
+                                <b>
+                                    <apex:outputText value="N° de siret : " />
+                                    <apex:outputText value="{!quote.Opportunity.N_SIRET_du_compte_de_facturation__c}" />
+                                </b>
+                            </td>
+                            <td style="display: {!IF(quote.Opportunity.BU__c == 'Azergo Air','','none')}; border-left:6px solid rgb(99, 174, 187);" class="header_item">&nbsp;
+                                <b>
+                                    <apex:outputText value="N° de siret : " />
+                                    <apex:outputText value="{!quote.Opportunity.N_SIRET_du_compte_de_facturation__c}" />
+                                </b>
+                            </td>
+                            <td style="display: {!IF(quote.Opportunity.BU__c == '3D Concept','','none')}; border-left:6px solid #188ac6;" class="header_item">&nbsp;
+                                <b>
+                                    <apex:outputText value="N° de siret : " />
+                                    <apex:outputText value="{!quote.Opportunity.N_SIRET_du_compte_de_facturation__c}" />
+                                </b>
+                            </td>
+                            <!----- Fin Affichage de cellule en fonction de la BU ------>
+                        </tr>
+                    </table>
+                </div>
+                    
+                <table style="display: inline-block;float: right;font-size:11px;">
+                    <tr>
+                        <td>
+                            <apex:outputText value="Date du devis :" />
+                            <apex:outputText value="{0, date,  dd/MM/yyyy}">
+                               <apex:param value="{!quote.Date_d_envoi_du_devis__c}" /></apex:outputText> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:outputText value="Devise du devis :" />
+                            <apex:outputText value=" Euros" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:outputText value="Offre valable jusqu'au :" />
+                            <apex:outputText value="{0, date,  dd/MM/yyyy}">
+                                <apex:param value="{!quote.Offre_valable_jusqu_au__c}" /></apex:outputText>
+                        </td>
+                    </tr>
+                </table>
+            </apex:outputPanel>
+
+            <div class="footer">
+                <div>Page
+                    <span class="pagenumber" /> sur
+                    <span class="pagecount" />
+                </div>
+            </div>
+        </div>
+ 
+        <div class="AllText">
+            <table style="width:100%;border-spacing: 10px;font-size:11px;">
+                <tr>
+                    <!------- Curent User ------>
+                    <td>
+                        <b>
+                            <!-- <apex:outputText value="{!curentUser.CompanyName}" /> -->
+                            <apex:outputText value="{!quote.Opportunity.BU__c}" />
+                            <!-- <apex:outputText value="{!quote.Opportunity.BU__c}" /> -->
+                        </b>
+                        <br/>
+                        <apex:outputText value="{!curentUser.Street}" />
+                        <br/>
+                        <apex:outputText value="{!curentUser.postalCode}" /> &nbsp;
+                        <apex:outputText value="{!curentUser.City}" />
+                        <br/>
+                        <apex:outputText value="{!curentUser.Country}" />
+                    </td>
+                    <!------- Billing Address ------>
+                    <td style="border-left:2px solid #007ede;">
+                        <b>
+                            <apex:outputText value="Adresse Facturation :" />
+                        </b>
+                        <br/>
+                        <b>
+                            <apex:outputText value="{!quote.BillingName}" />
+                        </b>
+                        <br/>
+                        <apex:outputText value="{!quote.BillingStreet}" />
+                        <br/>
+                        <apex:outputLabel style="display: {!IF(ISBLANK(quote.Complement_adresse_facturation__c), 'none', 'table-row')};">
+                            <apex:outputText value="{!quote.Complement_adresse_facturation__c}" />
+                            <br/>
+                        </apex:outputLabel>
+                        <apex:outputText value="{!quote.BillingPostalCode}" />&nbsp;
+                        <apex:outputText value="{!quote.BillingCity}" />
+                        <br/>
+                        <apex:outputText value="{!quote.BillingCountry}" />
+                    </td>
+                </tr>
+                <tr>
+                    <!------- Conseiller ------>
+                    <td>
+                        <b>
+                            <apex:outputText value="Votre Conseiller/ère :" />
+                        </b>
+                        <br/>
+                        <apex:outputText value="{!quote.Nom_du_commercial__c}" />&nbsp; - &nbsp;
+                        <apex:outputText value="{!quote.Mail_du_commercial__c}" /> &nbsp; - &nbsp;
+                        <apex:outputText value="{!quote.Telephone_du_commercial__c}" />
+                    </td>
+                    <!------- Shipping Address ------>
+                    <td style="border-left:2px solid #007ede;">
+                        <b>
+                            <apex:outputText value="Adresse Livraison :" />
+                        </b>
+                        <br/>
+                        <b>
+                            <apex:outputPanel rendered="{!IF(NOT(ISNULL(quote.ShippingName)), true, false)}">
+                                <apex:outputText value="{!quote.ShippingName}" />
+                                <br/>
+                            </apex:outputPanel>
+                        </b>
+                        
+                        <apex:outputPanel rendered="{!IF(NOT(ISNULL(quote.ShippingStreet)), true, false)}">
+                            <apex:outputText value="{!quote.ShippingStreet}" />
+                                <br/>
+                            </apex:outputPanel>
+                        
+                       
+                        <apex:outputLabel style="display: {!IF(ISBLANK(quote.Complement_adresse_expedition__c), 'none', 'table-row')};">
+                            <apex:outputText value="{!quote.Complement_adresse_expedition__c}" />
+                            <br/>
+                        </apex:outputLabel>
+                        <apex:outputText value="{!quote.ShippingPostalCode}" />&nbsp;
+                        <apex:outputText value="{!quote.ShippingCity}" />
+                        <br/>
+                        <apex:outputText value="{!quote.ShippingCountry}" />
+                    </td>
+                </tr>
+                <tr>
+                    <!------- Assistante de votre conseiller ------>
+                    <td>
+                        <b>
+                            <apex:outputText value="Assistant(e) de votre conseiller/ère :" />
+                        </b>
+                        <br/>
+                        <apex:outputText value="{!quote.Mail_de_l_assistant_commercial__c}" />&nbsp; - &nbsp;
+                        <apex:outputText value="{!quote.Nom_de_l_assistant_commercial__c}" />&nbsp; - &nbsp;
+                        <apex:outputText value="{!quote.Telephone_de_l_assistant_commercial__c}" />
+                    </td>
+                    <!------- Contact Livraison ------>
+                    <td style="display: {!IF(ISBLANK(quote.Interlocuteur_de_livraison__c), 'none', 'table-row')};">
+                        <b>
+                            <apex:outputText value="Contact Livraison :" />
+                        </b>
+                        <br/>
+                        <apex:outputText value="{!quote.Interlocuteur_de_livraison__r.TECH_Civilite_Prenom_Nom__c +' '+ quote.Interlocuteur_de_livraison__r.Phone}"
+                        />
+                    </td>
+                </tr>
+            </table>
+ 
+            <hr style="color: #5a99d4;height: 1px;background-color: #5a99d4;border: none;" />
+ 
+            <apex:outputpanel rendered="{!NOT(ISNULL(quote.Utilisateur__c)) && quote.Devis_Anonyme__c == false}">
+                <b>
+                    <apex:outputText value="Aménagement de poste de : " />
+                </b>
+                <apex:outputText value="{!quote.Utilisateur__c}" />
+                <br/>
+                <br/>
+            </apex:outputpanel>
+ 
+            <b>
+                <apex:outputText value="Informations spécifiques : " />
+            </b>
+            <apex:outputText value="{!quote.Information_commentaire_compte__c}" />
+            <br/>
+ 
+            <hr style="color: #5a99d4;height: 2px; background-color: #5a99d4;border: none;" />
+            <!--border: none;-->
+ 
+        </div>
+ 
+        <div style="width:100%;" class="AllText">
+            <table>
+                <center>
+                    <tr style="background-color: #dbe5f1;font-size:11px;">
+                        <td style="width:12%;border-bottom: thin solid;border-top: thin solid;">Visuel de la solution Non contractuel</td>
+                        <td style="width:59%;border-bottom: thin solid;border-top: thin solid;">Référence et désignation</td>
+                        <td style="width:49%;border-bottom: thin solid;border-top: thin solid;">Informations tarifaires</td>
+
+                      <!-- <td style="width:8%;border-bottom: thin solid;border-top: thin solid;">PU HT</td>
+                        <td style="width:5%;border-bottom: thin solid;border-top: thin solid;font-weight: bold;">Remise</td>
+                        <td style="width:5%;border-bottom: thin solid;border-top: thin solid;">Qté</td>
+                        <td style="width:8%;border-bottom: thin solid;border-top: thin solid;">Prix Total HT</td>
+                        <td style="width:5%;border-bottom: thin solid;border-top: thin solid;">TVA</td>
+                        <td style="width:10%;border-bottom: thin solid;border-top: thin solid;">Prix Total TTC</td> -->
+                    </tr>
+                </center>
+                <apex:repeat value="{!listLigneWrapper}" var="ligne">
+                    <tr style="border-left:2px solid #5a99d4; border-bottom: thin solid; page-break-inside: avoid;">
+                        <td style="border-bottom: thin solid #5a99d4;">
+ 
+                            <center>
+                                <apex:outputpanel rendered="{!(
+                            (NOT(ISNULL(ligne.thisLignePicture_ContentVersionId)) && ligne.isOptionProductWithoutConfig == FALSE))}">
+                                    <!--ajout BG: && ligne.isOptionProductWithoutConfig == FALSE-->
+                                    <img src="{!'/sfc/servlet.shepherd/version/download/' + ligne.thisLignePicture_ContentVersionId + '?asPdf=false'}" style="width:70px;height:auto;"
+                                    />
+                                </apex:outputpanel>
+                           
+                                <apex:repeat value="{!ligne.thisListLignePicture_ContentVersionId}" var="val">
+                                    <apex:outputpanel rendered="{!(
+                            (NOT(ISNULL(val)) && ligne.isOptionProductWithoutConfig == FALSE))}">
+                                        <!--ajout BG: && ligne.isOptionProductWithoutConfig == FALSE-->
+                                        <img src="{!'/sfc/servlet.shepherd/version/download/' + val + '?asPdf=false'}" style="width:70px;height:auto;" />
+                                    </apex:outputpanel>
+ 
+                                </apex:repeat>
+                            </center>
+                        </td>
+ 
+                        <td style="font-size:10px;text-align: left; border-bottom: thin solid #5a99d4;">
+                            <apex:repeat value="{!ligne.MapligneWrapper}" var="nomenclature">
+                                <ul>
+ 
+                                    <apex:repeat value="{!ligne.MapligneWrapper[nomenclature]}" var="produit">
+                                        <!--Pour les produits en statut matériel à récupérer, ils ne doivent pas à paraître sur le devis. -->
+                                        <!-- Produit de Base + les frais-->
+                                       <apex:outputPanel rendered="{!AND(produit.Product2.Type__c=='Base', 
+                                            NOT(ISNULL(produit.Nom_configuration_du_produit__c)),produit.Quote.Afficher_les_noms_de_configuration__c == true)}">
+                                           <apex:outputText style="font-size:12px;"  value="Nom de la configuration : {!produit.Nom_configuration_du_produit__c}"/>
+                                           <br/>
+                                       </apex:outputPanel>
+                                           	                 
+                                        <apex:outputPanel rendered="{! (produit.N_ligne_Niveau_2__c == 0 && produit.Statut__c!='Matériel à Récupérer')|| ligne.isFrais }">
+                                            <br/>
+                                            <b>
+                                                <apex:outputText value="{!produit.Product2.ProductCode}" />
+                                                <!-- TODO Mettre le lien qui est dans le champ urlFicheTechnique lorsque le produit est un produit de base et non un produit de ligne de frais -->
+                                          
+                                                <apex:outputPanel rendered="{!IF((produit.Product2.Type__c == 'Base' && ligne.isFrais == false), true, false)}">
+                                                    <a href="{!ligne.urlFicheTechnique}" target="_blank">{!produit.Product2.Name}</a>
+                                                </apex:outputPanel>
+                                             
+                                                <apex:outputText value="{!IF(NOT(ISBLANK(produit.Product2.Name)),' - '+produit.Product2.Name,'')}" />
+                                                <apex:outputText value="{!IF(NOT(ISBLANK(produit.Product2.Designation_secondaire__c)),' - ' + produit.Product2.Designation_secondaire__c,'')}"
+                                                />
+                                                <apex:outputText style="font-size: 14px;" value="{!IF(NOT(ISBLANK(produit.Description)),' - ' + produit.Description,'')}"
+                                                />
+                                                <!--D.Simo: la mention 'Matériel à livrer' ne doit apparaître que pour les produits dont le statut est "N'est pas sur place". Cette mention ne doit pas apparaître pour les frais et les produits de la gamme "LOCATION". -->
+                                                <!--D.Simo: la mention 'Matériel sur place' ne doit apparaître que pour les produits dont le statut est 'Azergo Facturable','Azergo Non Facturable', 'Produit Revendeur Facturable' et 'Produit Revendeur Non Facturable'. Cette mention ne doit pas apparaître pour les frais (Montage, Port, Déplacement, Intervention), pour les produits de la gamme "Training" et "LOCATION", et les produits dont les statuts sont différents de ceux mentionnés avant. -->
+                                                <b style="color: green;">
+                                                    <apex:outputText value=" - Matériel sur place" rendered="{! (NOT(contains(produit.Statut__c,'est pas sur place')) && NOT(contains(produit.Statut__c,'Matériel à récupérer')) && NOT(contains(produit.Statut__c,'Produit dévalorisé'))) && (NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))) }"
+                                                    />
+                                                </b>
+                                                <!-------- Affichage de cellule en fonction de la BU ------>
+                                                <apex:outputText rendered="{!IF(OR(quote.Opportunity.BU__c == 'Azergo', ISBLANK(quote.Opportunity.BU__c)), true, false)}">
+                                                    <b style="color: orange; ">
+                                                        <apex:outputText value=" - Matériel à livrer " rendered="{!((contains(produit.Statut__c,'est pas sur place'))) &&(NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) &&NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')))}"/>
+                                                    </b>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!IF(quote.Opportunity.BU__c == 'Azergo Air', true, false)}">
+                                                    <b style="color: rgb(99, 174, 187); ">
+                                                        <apex:outputText value=" - Matériel à livrer " rendered="{!((contains(produit.Statut__c,'est pas sur place'))) &&(NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) &&NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')))}"/>
+                                                    </b>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!IF(quote.Opportunity.BU__c == '3D Concept', true, false)}">
+                                                    <b style="color: #188ac6; ">
+                                                        <apex:outputText value=" - Matériel à livrer " rendered="{!((contains(produit.Statut__c,'est pas sur place'))) &&(NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) &&NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')))}"/>
+                                                    </b>
+                                                </apex:outputText>
+                                                <!-------- Fin Affichage de cellule en fonction de la BU ------>
+                                                <b style="color: green;">
+                                                    <apex:outputText rendered="{!produit.discount == 100}" value="- OFFERT" />
+                                                </b>
+                                                <!-- Produit dans une nomenclature -> Prix unitaire fois quantité dans la nomenclature  -->
+                                                <!-- Sinon Prix unitaire -->
+                                                <apex:outputText rendered="{!quote.Afficher_le_detail_des_couts_des_options__c}" value=" ({!produit.Prix_unitaire_dans_la_configuration__c}€ HT)"
+                                                />
+                                            </b>
+                                            <br/>
+                                                
+                                        </apex:outputPanel>
+ 
+                                        <!-- Produit de type option -->
+                                        <li>
+                                            <apex:outputLabel rendered="{! produit.N_ligne_Niveau_2__c != 0 && produit.N_ligne_Niveau_1__c != 90000 && quote.Afficher_le_detail_de_la_nomenclature__c && produit.Statut__c!='Matériel à Récupérer'}">
+                                                <apex:outputText value="{!produit.Product2.ProductCode}" />
+
+                                                <!--TODO Mettre le lien qui est dans le champ urlFicheTechnique lorsque produit.Product2.Option_comme_produit_de_base__c == true -->
+                                                <apex:outputPanel rendered="{!IF((produit.Product2.Option_comme_produit_de_base__c == true), true, false)}">
+                                                       <a href="{!ligne.urlFicheTechnique}" target="_blank">{!produit.Product2.Name}</a>
+                                                </apex:outputPanel>
+                                                <apex:outputText value="{!IF(NOT(ISBLANK(produit.Product2.Name)),' - '+produit.Product2.Name,'')}" />
+                                                <apex:outputText value="{!IF(NOT(ISBLANK(produit.Product2.Designation_secondaire__c)),' - ' + produit.Product2.Designation_secondaire__c,'')}"
+                                                />
+                                                <apex:outputText style="font-size:14px; font-weight:bold;" value="{!IF(NOT(ISBLANK(produit.Description)),' - ' + produit.Description,'')}"
+                                                />
+                                                <!--D.Simo: la mention 'Matériel à livrer' ne doit apparaître que pour les produits dont le statut est "N'est pas sur place". Cette mention ne doit pas apparaître pour les fraiset les produits de la gamme "LOCATION". -->
+                                                <!--D.Simo: la mention 'Matériel sur place' ne doit apparaître que pour les produits dont le statut est 'Azergo Facturable','Azergo Non Facturable', 'Produit Revendeur Facturable' et 'Produit Revendeur Non Facturable'. Cette mention ne doit pas apparaître pour les frais (Montage, Port, Déplacement, Intervention), pour les produits de la gamme "Training"et "LOCATION", et les produits dont les statuts sont différents de ceux mentionnés avant. -->
+                                                <b style="color: green;">
+                                                    <apex:outputText value=" - Matériel sur place" rendered="{! NOT(contains(produit.Statut__c,'est pas sur place')) && NOT(contains(produit.Statut__c,'Matériel à Récupérer')) && NOT(contains(produit.Statut__c,'Produit dévalorisé')) && (NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))) }"
+                                                    />
+                                                </b>
+                                                <!--------- Affichage de cellule en fonction de la BU ------>
+                                                <apex:outputText rendered="{!IF(OR(quote.Opportunity.BU__c == 'Azergo', ISBLANK(quote.Opportunity.BU__c)), true, false)}">
+                                                    <b style="color: orange; ">
+                                                    <apex:outputText value=" - Matériel à livrer " rendered="{!((contains(produit.Statut__c,'est pas sur place'))) &&(NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) &&NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')))}"/>
+                                                    </b>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!IF(quote.Opportunity.BU__c == 'Azergo Air', true, false)}">
+                                                    <b style="color: rgb(99, 174, 187); ">
+                                                    <apex:outputText value=" - Matériel à livrer " rendered="{!((contains(produit.Statut__c,'est pas sur place'))) &&(NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) &&NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')))}"/>
+                                                    </b>
+                                                </apex:outputText>
+                                                <apex:outputText rendered="{!IF(quote.Opportunity.BU__c == '3D Concept', true, false)}">
+                                                    <b style="color: #188ac6; ">
+                                                    <apex:outputText value=" - Matériel à livrer " rendered="{!((contains(produit.Statut__c,'est pas sur place'))) &&(NOT(contains(produit.Product2.Gamme__r.Name, 'Montage'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'LOCATION')) &&NOT(contains(produit.Product2.Gamme__r.Name, 'Port'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Intervention'))&& NOT(contains(produit.Product2.Gamme__r.Name, 'Training')) && NOT(contains(produit.Product2.Gamme__r.Name, 'Deplacement')))}"/>
+                                                    </b>
+                                                </apex:outputText>
+                                                <!--------- Fin Affichage de cellule en fonction de la BU ------>
+                                                <b style="color: green;">
+                                                    <apex:outputText rendered="{!produit.discount == 100}" value="- OFFERT" />
+                                                </b>
+                                                <apex:outputPanel rendered="{!IF(AND(NOT(ISBLANK(produit.Product2.Gamme__r.Texte_type__c)), produit.Product2.Option_comme_produit_de_base__c == true),true,false)}">
+                                                    <apex:outputField value="' - ' + produit.Product2.Gamme__r.Texte_type__c"/>
+                                                </apex:outputPanel>
+                                                
+ 
+                                                <apex:outputText rendered="{!quote.Afficher_le_detail_des_couts_des_options__c}" value=" ({!produit.Prix_unitaire_dans_la_configuration__c}€ HT)"
+                                                />
+                                            </apex:outputLabel>
+                                        </li>
+ 
+                                    </apex:repeat>
+                                </ul>
+                            </apex:repeat>
+                            <div style="text-align: justify; font-size: 10px;">
+                                <apex:outputPanel rendered="{!ligne.isOptionProductWithoutConfig == FALSE}"> <!-- SK.TMA0015-added output panel + changed to outputfield-->
+                                    <apex:outputField value="{!ligne.thisligneDevis.Product2.Gamme__r.Texte_type__c}"/>
+                                </apex:outputPanel>
+                       
+                                <!--ajout BG: rendered="{!ligne.isOptionProductWithoutConfig == FALSE}"-->
+                            </div>
+                            <br/>
+                        </td>
+ 
+                        <td style="border-bottom: thin solid #5a99d4;text-align: left;font-size:11px;padding-left: 40px;">
+                            <!-- masquer pour le produit COMMENT -->
+                             PU HT &nbsp;: &nbsp; <apex:outputText value="{!ligne.prixUnitaire}€" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                           <br/>
+                           <!--L'affichage de la remise uniquement lorsqu'elle est supérieure à 0 est déjà faite mais si elle ne marche apparemment 
+                                pas je fais ceci en attendant de demander au client de faire un test concernant ceci <apex:outputPanel render> -->
+                            
+                            <apex:outputPanel rendered="{!IF(ligne.remise > 0, true, false)}" >
+                                <apex:outputLabel style="color: green" value="Remise"/> &nbsp;:&nbsp; <apex:outputText style="color: green" value="{!ligne.remise}%"  />
+                                <br/><br/>
+                            </apex:outputPanel> 
+
+                            <apex:outputPanel rendered="{!IF(ligne.remise <= 0, true,false)}">
+                                <br/>
+                            </apex:outputPanel> 
+                           
+                           <!-- PU Net &nbsp;: &nbsp; <apex:outputText value="{!ligne.prixUnitaireNet}€" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                            <br/>
+                            <br/>-->
+
+                           Quantité &nbsp;: &nbsp; <apex:outputText value="{!ligne.quantite}" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                           <br/>
+                           <br/>
+
+                           Prix total HT &nbsp;: &nbsp; <apex:outputText value="{!ligne.prixHT}€" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+
+                           <br/>
+                           Taux de TVA &nbsp;: &nbsp; <apex:outputText value="{!ligne.tva}%" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+
+                           <br/>
+                           Prix total TTC &nbsp;: &nbsp; <apex:outputText value="{!ligne.prixTTC}€" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+
+                           <br/><br/>
+                           <apex:outputPanel rendered="{!IF(ligne.tech_ecotaxe_applicable > 0, true, false)}" style="font-size:10px">
+                                Ecotaxe applicable HT &nbsp;: &nbsp; <apex:outputText value="{!ligne.tech_ecotaxe_applicable}€"  />
+                                <br/>
+                           </apex:outputPanel>
+                            <apex:outputPanel rendered="{!IF(ligne.totalTTC_sur_ecotaxe > 0, true, false)}" style="font-size:10px">
+                                Ecotaxe applicable TTC &nbsp;: &nbsp; <apex:outputText value="{!ligne.totalTTC_sur_ecotaxe}€"  />
+                                <br/>
+                            </apex:outputPanel> 
+                        </td>
+ 
+                       <!-- <td style="border-bottom: thin solid #5a99d4;font-size:11px;"> -->
+                            <!-- masquer pour le produit COMMENT -->
+                           <!-- <apex:outputText value="{!ligne.prixUnitaire}" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                        </td>
+ 
+                        <td style="border-bottom: thin solid #5a99d4;font-size:11px;solid #efab00;font-weight: bold;">
+                            <!--L'affichage de la remise uniquement lorsqu'elle est supérieure à 0 est déjà faite mais si elle ne marche apparemment 
+                                pas je fais ceci en attendant de demander au client de faire un test concernant ceci <apex:outputPanel render> -->
+                          <!--  <apex:outputText value="{!ligne.remise}%" rendered="{!IF(ligne.remise > 0, true, false)}" />
+                        </td>
+                        <td style="border-bottom: thin solid #5a99d4;font-size:11px;">
+                            <apex:outputText value="{!ligne.quantite}" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                        </td>
+                        <td style="border-bottom: thin solid #5a99d4;font-size:11px;">
+                            <apex:outputText value="{!ligne.prixHT}" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                        </td>
+                        <td style="border-bottom: thin solid #5a99d4;font-size:11px;">
+                            <apex:outputText value="{!ligne.tva}%" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                        </td>
+                        <td style="border-bottom: thin solid #5a99d4;font-size:11px;">
+                            <apex:outputText value="{!ligne.prixTTC}" rendered="{!IF(contains(ligne.productCode,'COMMENT'),false,true)}" />
+                        </td> -->
+                    </tr>
+                </apex:repeat>
+            </table>
+        </div>
+ 
+        <div style="page-break-inside: avoid !important;">
+            <div class=" AllText">
+                <!-- style="page-break-inside:avoid;" -->
+                <br/>
+                <!-- Changement de couleur en fonction de la BU -->
+                <b style= "display:{!IF(OR(quote.Opportunity.BU__c == 'Azergo', ISBLANK(quote.Opportunity.BU__c)), '', 'none')};border-left:3px solid #efab00;">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:outputText value="Détail TVA " />
+                </b>
+                <b style= "display:{!IF(quote.Opportunity.BU__c == 'Azergo Air', '', 'none')};border-left:3px solid rgb(99, 174, 187);">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:outputText value="Détail TVA " />
+                </b>
+                <b style= "display:{!IF(quote.Opportunity.BU__c == '3D Concept', '', 'none')};border-left:3px solid #188ac6;">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <apex:outputText value="Détail TVA " />
+                </b>
+                <!-- Fin Changement de couleur en fonction de la BU -->
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <!------- Détail TVA ------>
+                <center>
+                    <table style="width:65%; float:left;">
+                        <tr style="background-color: #dbe5f1;">
+                            <td>Type</td>
+                            <td>Taux TVA</td>
+                            <td>Montant Net HT</td>
+                            <td>Total TVA</td>
+                        </tr>
+                        <apex:repeat value="{!groupedResultsTVAsurVentes}" var="t">
+                            <tr>
+                                <td>TVA sur ventes</td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,###.00}">
+                                    	<apex:param value="{!VALUE(t['TECH_TVA_Produit__c'])}" />
+                                    </apex:outputText>
+                                    
+                                </td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,###.00}"> <!-- Round up - to 2 dp- miaa 13 April2023-->
+                                    	<apex:param value="{!t['expr0']}" />
+                                    </apex:outputText>
+                                    
+                                </td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,###.00}"> <!-- Round up - to 2 dp- miaa 13 April2023-->
+                                    	<apex:param value="{!t['expr1']}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                        <apex:repeat value="{!groupedResultsEcotaxe}" var="e">
+                            <tr>
+                                <td>Ecotaxe</td>
+                                <td>
+                                    <apex:outputText value="{0, number, ###,###.00}">
+                                    	<apex:param value="{!VALUE(e['TECH_Taux_TVA_Ecotaxe__c'])}" />
+                                    </apex:outputText>
+                                </td>
+                                <td>
+                                     <apex:outputText value="{0, number, ###,###.00}"> <!-- Round up - to 2 dp- miaa 13 April2023-->
+                                        <apex:param value="{!e['expr0']}" />
+                                	</apex:outputText>
+                                </td>
+                                <td>
+                                     <apex:outputText value="{0, number, ###,###.00}"><!-- Round up - to 2 dp- miaa 13 April2023-->
+                                    	<apex:param value="{!e['expr1']}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                </center>
+ 
+                <!--- Totaux ---->
+                <table style="width:30%; float:right; cellspacing:0;">
+                    <!-- float:left;overflow:hidden;display:inline-block; -->
+                    <!-- <tr style="border-bottom: thin solid;">
+                <td style="text-align: left;border-bottom: thin solid #5a99d4;"><apex:outputText value="Total HT :"/></td>
+                <td style="text-align: right;border-bottom: thin solid #5a99d4;"><apex:outputText value="{!quote.Prix_total__c} EUR"/></td>
+            </tr> 
+            <tr>
+                <td style="text-align: left;border-bottom: thin solid #5a99d4;"><apex:outputText value="Eco-Taxe HT :"/></td>
+                <td style="text-align: right;border-bottom: thin solid #5a99d4;"><apex:outputText value="{!quote.Total_Eco_Taxe_HT__c} EUR"/></td>
+            </tr> -->
+                    <tr>
+                        <td style="text-align: left;border-bottom: thin solid #5a99d4;">
+                            <apex:outputText value="Total HT Net :" />
+                        </td>
+                        <td style="text-align: right;border-bottom: thin solid #5a99d4;">
+                            <apex:outputText value="{!quote.Total_HT_Net__c} EUR" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;border-bottom: thin solid #5a99d4;">
+                            <apex:outputText value="Total TVA :" />
+                        </td>
+                        <td style="text-align: right;border-bottom: thin solid #5a99d4;">
+                            <apex:outputText value="{!quote.Total_TVA__c} EUR" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;border-bottom: thin solid #5a99d4;">
+                            <b>
+                                <apex:outputText value="Net à Payer :" />
+                            </b>
+                        </td>
+                        <td style="text-align: right;border-bottom: thin solid #5a99d4;">
+                            <b>
+                                <apex:outputText value="{!quote.Net_a_payer__c} EUR" />
+                            </b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!--------- Affichage en fonction de la BU -------->
+            <div style="display:{!IF(quote.Opportunity.BU__c == 'Azergo Air', '', 'none')}; clear:both;border-left:3px solid rgb(99, 174, 187);" class="AllText">
+                <!-- Modification affichage - Demande du client : ajout de texte 10/02/2022 -->
+             <table width = "75%">
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Condition de règlement : " />
+                		</b>
+                    </td>
+                    <td>
+                        <!--Modification à la  suite de la demande du client 17/03/2022 
+						Afficher les conditions de règlement qui sont sur le compte lorsque sa valeur est non nulle 
+						Sinon afficher ce qui figure sur le devis -->
+                        &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText style="display:{!IF(AND(quote.Account.Conditions_de_r_glements__c == null,
+                                                                          quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c == null),'','none')};" 
+						value="{!quote.Condition_de_reglement__c}" /> 
+                        
+                         <apex:outputText style="display:{!IF(quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c != null,'','none')};"
+                                                                  value="{!quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c}" />
+                        
+                        <apex:outputText style="display:{!IF(AND(quote.Account.Conditions_de_r_glements__c != null,
+                                                                          quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c == null),'','none')};" 
+                        value="{!quote.Account.Conditions_de_r_glements__c}" />
+           
+                     	<!--Fin Modification à la  suite de la demande du client 17/03/2022 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Mode de règlement : " />
+                		</b>
+                    </td>
+                    <td>
+                         &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="{!quote.Mode_de_reglement__c}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Offre valable jusqu'au :" />
+                		</b>
+                    </td>
+                    <td>
+                         &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="{0, date,  dd/MM/yyyy}">
+                    <apex:param value="{!quote.Offre_valable_jusqu_au__c}" /></apex:outputText>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 
+                        <b>
+                            &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="Numéro d’enregistrement en application de" />
+							&nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="l’article L. 541-10 du code de l’environnement :"/>
+                        </b>
+                    </td>
+                    <td>
+                        <center>
+                             &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="FR014122_10YZVY" />
+                        </center>
+                       
+                    </td>
+                </tr>
+            </table>
+            <!-- Fin Modification affichage - Demande du client : ajout de texte 10/02/2022 -->
+
+            </div>
+
+            <div style="display:{!IF(OR(quote.Opportunity.BU__c == 'Azergo', ISBLANK(quote.Opportunity.BU__c)), '', 'none')}; clear:both;border-left:3px solid #efab00;" class="AllText">
+                <!-- Modification affichage - Demande du client : ajout de texte 10/02/2022 -->
+             <table width = "75%">
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Condition de règlement : " />
+                		</b>
+                    </td>
+                    <td>
+                        <!--Modification à la  suite de la demande du client 17/03/2022 
+						Afficher les conditions de règlement qui sont sur le compte lorsque sa valeur est non nulle 
+						Sinon afficher ce qui figure sur le devis -->
+                        &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText style="display:{!IF(AND(quote.Account.Conditions_de_r_glements__c == null,
+                                                                          quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c == null),'','none')};" 
+						value="{!quote.Condition_de_reglement__c}" /> 
+                        
+                         <apex:outputText style="display:{!IF(quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c != null,'','none')};"
+                                                                  value="{!quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c}" />
+                        
+                        <apex:outputText style="display:{!IF(AND(quote.Account.Conditions_de_r_glements__c != null,
+                                                                          quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c == null),'','none')};" 
+                        value="{!quote.Account.Conditions_de_r_glements__c}" />
+           
+                     	<!--Fin Modification à la  suite de la demande du client 17/03/2022 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Mode de règlement : " />
+                		</b>
+                    </td>
+                    <td>
+                         &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="{!quote.Mode_de_reglement__c}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Offre valable jusqu'au :" />
+                		</b>
+                    </td>
+                    <td>
+                         &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="{0, date,  dd/MM/yyyy}">
+                    <apex:param value="{!quote.Offre_valable_jusqu_au__c}" /></apex:outputText>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 
+                        <b>
+                            &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="Numéro d’enregistrement en application de" />
+							&nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="l’article L. 541-10 du code de l’environnement :"/>
+                        </b>
+                    </td>
+                    <td>
+                        <center>
+                             &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="FR014122_10YZVY" />
+                        </center>
+                       
+                    </td>
+                </tr>
+            </table>
+            <!-- Fin Modification affichage - Demande du client : ajout de texte 10/02/2022 -->
+
+            </div>
+
+            <div style="display:{!IF(quote.Opportunity.BU__c == '3D Concept', '', 'none')}; clear:both;border-left:3px solid #188ac6;" class="AllText">
+                <!-- Modification affichage - Demande du client : ajout de texte 10/02/2022 -->
+             <table width = "75%">
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Condition de règlement : " />
+                		</b>
+                    </td>
+                    <td>
+                        <!--Modification à la  suite de la demande du client 17/03/2022 
+						Afficher les conditions de règlement qui sont sur le compte lorsque sa valeur est non nulle 
+						Sinon afficher ce qui figure sur le devis -->
+                        &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText style="display:{!IF(AND(quote.Account.Conditions_de_r_glements__c == null,
+                                                                          quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c == null),'','none')};" 
+						value="{!quote.Condition_de_reglement__c}" /> 
+                        
+                         <apex:outputText style="display:{!IF(quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c != null,'','none')};"
+                                                                  value="{!quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c}" />
+                        
+                        <apex:outputText style="display:{!IF(AND(quote.Account.Conditions_de_r_glements__c != null,
+                                                                          quote.Account.Compte_de_facturation__r.Conditions_de_r_glements__c == null),'','none')};" 
+                        value="{!quote.Account.Conditions_de_r_glements__c}" />
+           
+                     	<!--Fin Modification à la  suite de la demande du client 17/03/2022 -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Mode de règlement : " />
+                		</b>
+                    </td>
+                    <td>
+                         &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="{!quote.Mode_de_reglement__c}" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>&nbsp;&nbsp;&nbsp;&nbsp;
+                    	<apex:outputText value="Offre valable jusqu'au :" />
+                		</b>
+                    </td>
+                    <td>
+                         &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="{0, date,  dd/MM/yyyy}">
+                    <apex:param value="{!quote.Offre_valable_jusqu_au__c}" /></apex:outputText>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> 
+                        <b>
+                            &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="Numéro d’enregistrement en application de" />
+							&nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="l’article L. 541-10 du code de l’environnement :"/>
+                        </b>
+                    </td>
+                    <td>
+                        <center>
+                             &nbsp;&nbsp;&nbsp;&nbsp; <apex:outputText value="FR014122_10YZVY" />
+                        </center>
+                       
+                    </td>
+                </tr>
+            </table>
+            <!-- Fin Modification affichage - Demande du client : ajout de texte 10/02/2022 -->
+
+            </div>
+            <!--------- Fin Affichage en fonction de la BU --------->
+
+            <!------- Bon pour accord ------>
+            <div class="AllText">
+                <hr style="color: #5a99d4;height: 2px; background-color: #5a99d4;border: none;" />
+ 
+                <b>
+                    <apex:outputText value="Bon pour accord :" />
+                </b>
+ 
+                <table style="width:100%;">
+                    <!--    <tr>
+                 <td colspan = "3" style="width:100%; color:#FF0000; font-size:15px;" >
+                    <apex:outputText value="Veuillez indiquer l'interlocuteur pour la relance de paiement :"/>
+                 </td> 
+                </tr> -->
+                    <tr>
+                        <td style="width:10%;">
+                            <apex:outputText value="Nom :" />
+                        </td>
+                        <td style="border-bottom: 1px solid #5a99d4;width:40%;">
+                            <!--Test Nom-->
+                        </td>
+                        <td style="width:30%;">
+                            <center>
+                                <apex:outputText style="font-size:10px;" value="Votre numéro de commande interne :" />
+                                <br/>
+                                <apex:outputText style="font-size:8px;" value="Si nécessaire pour le bon traitement de nos documents futurs" />
+                            </center>
+                        </td>
+                        <td>
+                            <hr style="color: #5a99d4;height: 1px; background-color: #5a99d4;border: none;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:10%;">
+                            <apex:outputText value="Tel :" />
+                        </td>
+                        <td style="border-bottom: 1px solid #5a99d4;width:40%;">
+                            <!--07 07 07 07 07-->
+                        </td>
+                        <td rowspan="3" colspan="2" style="vertical-align: top;text-align: left;border: 1px solid #5a99d4;width:50%; color:#FF0000;">
+                            <apex:outputText value="Veuillez renseigner l’adresse de facturation et le numéro de siret :" /> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/>
+                            <apex:outputText value="Veuillez indiquer les coordonnées de l'interlocuteur
+                                            /du service en charge du paiement (nom, prénom(s), téléphone, email):" /> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:10%;">
+                            <apex:outputText value="Date :" />
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td style="width:10%;">
+                            <apex:outputText value="Signature & cachet :" />
+                        </td>
+                        <td style="border: 1px solid #5a99d4;width:45%;">
+                            &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/> &nbsp;
+                            <br/>
+                        </td>
+                    </tr>
+                </table>
+ 
+ 
+                <br/>
+ 
+                <div class="AllText">
+                    <!------ Pour l'entité Azergo ------>
+                    <div style="display:{!IF(OR(ISBLANK(quote.Opportunity.Entite__c),quote.Opportunity.Entite__c == 'Azergo'), '', 'none')}">
+                        <!-- utilisateur Azergo avec le profil Responsable Regional BNPL || Responsable_de_secteur_BNPL-->
+                        <div style="display:{!IF(curentUser.CompanyName=='AZERGO' && ( curentUser.UserRole.DeveloperName =='Responsable_Regional_BNPL' || curentUser.UserRole.DeveloperName == 'Responsable_de_secteur_BNPL'), 'block','none')}">
+                            <apex:outputText value="Vous pouvez nous retourner votre commande par mail à l'adresse " />
+                            <a href="mailto:commande@azergo.fr">commande-ouest@azergo.fr</a>.
+                        </div>
+                        <!-- utilisateur Azergo avec un profil différent de Responsable Regional BNPL -->
+                        <div style="display:{!IF(curentUser.CompanyName=='AZERGO' && curentUser.UserRole.DeveloperName !='Responsable_Regional_BNPL' && curentUser.UserRole.DeveloperName != 'Responsable_de_secteur_BNPL', 'block','none')}">
+                            <apex:outputText value="Vous pouvez nous retourner votre commande par mail à l'adresse " />
+                            <a href="mailto:commande@azergo.fr">commande@azergo.fr</a>.
+                        </div>
+                    <!------ Fin pour l'entité Azergo ------>
+                    </div>
+                    
+
+                    <!-- utilisateur Azergo Training -->
+                    <div style="display:{!IF(curentUser.CompanyName=='AZERGO TRAINING', 'block','none')}">
+                        <apex:outputText value="Vous pouvez nous retourner votre commande par mail à l'adresse " />
+                        <apex:outputText style="color:blue" value="{!quote.Mail_du_commercial__c}" />.
+                    </div>
+
+                    <!------ Pour l'entité 3D Concept ------>
+                    <div style="display:{!IF(quote.Opportunity.Entite__c == '3D Concept', '', 'none')}">
+                        <apex:outputText value="Vous pouvez nous retourner votre commande par mail à l'adresse " />
+                        <a href="mailto:commande@3dc.fr">commande@3dc.fr</a>.
+                    </div>
+                    <!------ Fin pour l'entité 3D Concept ------>
+                    
+                    <apex:outputText value="La signature de la présente offre vaut acceptation pour commande selon nos conditions générales de vente."
+                    />
+                    <br/>
+                    <apex:outputText value="Le signataire certifie l'exactitude des informations le concernant et s'engage à nous fournir toute information complémentaire ou modification nécessaire au bon traitement de nos documents commerciaux à venir."
+                    />
+                    <br/>
+                    <br/>
+ 
+                    <!------------ Changement du footer en fonction de l'entité ------------>
+                    <apex:image style="width: 90%;" rendered="{!IF(OR(quote.Opportunity.Entite__c=='Azergo', ISBLANK(quote.Opportunity.Entite__c)),true,false)}" value="{!URLFOR($Resource.footer_AZERGO_FR)}"/>
+                    <apex:image style="width: 90%;" rendered="{!IF(curentUser.CompanyName=='AZERGO TRAINING',true,false)}" value="{!URLFOR($Resource.footer_AZERGO_Training)}"/>
+                    <apex:image style="width: 90%;" rendered="{!IF(quote.Opportunity.Entite__c=='3D Concept', true, false)}" value="{!URLFOR($Resource.footer_3DConcept)}"/>
+                    <!------------ Fin changement du footer en fonction de l'entité ------------>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:component>

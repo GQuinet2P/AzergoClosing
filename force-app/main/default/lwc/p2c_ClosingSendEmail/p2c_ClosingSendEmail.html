@@ -1,0 +1,138 @@
+<template>
+  <div>
+
+    <template if:true={isLoading}>
+      <lightning-card>
+        <div class="spinner_overlay"></div>
+        <div class="spinner">
+          <lightning-spinner class="spinner_class" alternative-text="Loading" variant="brand">
+          </lightning-spinner>
+        </div>
+      </lightning-card>
+    </template>
+
+    <div class="slds-grid slds-grid_vertical slds-gutters">
+      <div class="slds-col slds-box slds-theme_shade slds-box_xx-small slds-m-bottom_x-small">
+        <div class="slds-grid slds-gutters slds-align_absolute-center" style="text-align: left;">
+          <div class="slds-col slds-size_1-of-5">
+            <lightning-button-icon icon-name="utility:arrow_left" variant="border-filled" onclick={handlePreviousGroup} alternative-text={label.closingEmail_PrevButtonAlt} disabled={hasNoPreviousGroup}></lightning-button-icon>
+          </div>
+          <div class="slds-col slds-size_2-of-5" style="text-align: center;">{label.closingEmail_PreviewTitle} {currentGroupName}</div>
+          <div class="slds-col slds-size_1-of-5" style="text-align: right;">
+            <div class="slds-form-element" style="text-align: center;">
+              <label class="slds-checkbox_toggle slds-grid">
+                <span class="slds-form-element__label slds-m-bottom_none">{label.closingEmail_SendSwitchLabel}</span>
+                <input type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" onchange={handleSendChange} aria-describedby="checkbox-toggle-16" checked={currentGroupSend} />
+                <span id="checkbox-toggle-16" class="slds-checkbox_faux_container" aria-live="assertive">
+                  <span class="slds-checkbox_faux"></span>
+                  <span class="slds-checkbox_on">{label.closingEmail_SendSwitchAuto}</span>
+                  <span class="slds-checkbox_off">{label.closingEmail_SendSwitchManual}</span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="slds-col slds-size_1-of-5" style="text-align: right;">
+            <lightning-button-icon icon-name="utility:arrow_right" variant="border-filled" onclick={handleNextGroup} alternative-text={label.closingEmail_NextButtonAlt} disabled={hasNoNextGroup}></lightning-button-icon>
+          </div>
+        </div>
+      </div>
+      <div class="slds-col slds-box slds-box_xx-small">
+        <div class="slds-scrollable__y" id="email-content-id-1">
+
+          <fieldset class="slds-form-element slds-form_compound">
+            <legend class="slds-assistive-text">New email</legend>
+            <div class="slds-form-element__control">
+              <div class="slds-form-element__group">
+                <div class="slds-form-element__row">
+                  <div class="slds-form-element slds-size_2-of-2">
+                    <div class="slds-form-element__control">
+                      <lightning-input data-id="toEmails" label="To" type="email" required="true" multiple="true" value={emailTo} onchange={handleToEmail}></lightning-input>
+                    </div>
+                  </div>
+                </div>
+  
+                <template if:true={showCc}>
+                  <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_2-of-2">
+                      <div class="slds-form-element__control">
+                        <lightning-input data-id="ccEmails" label="Cc" type="email" required="true" multiple="true" value={emailCc} onchange={handleCcEmail}></lightning-input>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+  
+                <template if:true={hasShowOption}>
+                  <div>
+                    <template if:false={showCc}>
+                        <div class="linkStyle" style={ccStyle} onclick={showCcZone}>{label.closingEmail_InputCcLabel}</div>
+                    </template>
+                    <template if:false={showBcc}>
+                      <div class="linkStyle" onclick={showBccZone}>{label.closingEmail_InputBccLabel}</div>
+                    </template>
+                  </div>
+                </template>
+  
+                <template if:true={showBcc}>
+                  <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_2-of-2">
+                      <div class="slds-form-element__control">
+                        <lightning-input data-id="bccEmails" label={label.closingEmail_InputBccLabel} type="email" required="true" multiple="true" value={emailBcc} onchange={handleBccEmail}></lightning-input>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+  
+                <div class="slds-form-element__row">
+                  <div class="slds-form-element slds-size_1-of-1">
+                    <div class="slds-form-element__control">
+                      <lightning-combobox name="templateFolder" label={label.closingEmail_TemplateFolderLabel} required data-id="TemplateFolder" options={templateFolderOptions} onchange={handleTemplateFolderChange} value={selectedFolderId}></lightning-combobox>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="slds-form-element__row">
+                  <div class="slds-form-element slds-size_1-of-1">
+                    <div class="slds-form-element__control">
+                      <lightning-combobox name="templateFile" label={label.closingEmail_TemplateFileLabel} required data-id="TemplateFile" options={templateOptions} onchange={handleTemplateChange}></lightning-combobox>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="slds-form-element__row">
+                  <div class="slds-form-element slds-size_1-of-1">
+                    <div class="slds-form-element__control">
+                      <lightning-input type="text" label={label.closingEmail_SubjectLabel} required data-id="EmailSubject" onchange={handleSubjectChange} value={emailSubjectValue}></lightning-input>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="slds-form-element__row">
+                  <div class="slds-form-element slds-size_1-of-1">
+                    <div class="slds-form-element__control">
+                      <lightning-input-rich-text type="text" label={label.closingEmail_ContentLabel} required data-id="EmailContent" formats={bodyFormats} onchange={handleContentChange} value={emailBodyValue}></lightning-input-rich-text>
+                    </div>
+                  </div>
+                </div>
+  
+                <template if:true={opptyFilesStruct}>
+                  <div class="slds-form-element__row">
+                    <div class="slds-form-element slds-size_1-of-1">
+                      <div class="slds-form-element__control">
+                        <c-p2-c_-folder-and-files-picker onremoveattachment={handleRemoveAttachment} onsetfileasattachment={handleAttachFile} ongenquotefile={consumeGenQuoteFile} structure={opptyFilesStruct} listtitle={label.closingEmail_PickerListTitle}></c-p2-c_-folder-and-files-picker>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+  
+              </div>
+            </div>
+          </fieldset>
+  
+        </div>
+      </div>
+      <div class="slds-col" style="padding-top: 15px; text-align: right;">
+        <lightning-button variant="brand" label={label.closingEmail_SendEmailButtonLabel} title={label.closingEmail_SendEmailButtonLabel} onclick={sendEmails} class="slds-m-left_x-small"></lightning-button>
+      </div>
+    </div>
+  </div>
+</template>

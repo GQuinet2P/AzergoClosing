@@ -1,0 +1,34 @@
+<template>
+    <div class="backdrop" onclick={handleClickOutside} onkeyup={handleKey}></div>
+    <div class="slds-popover slds-scrollable__y" style={boxClass}>
+        <template if:true={stdListviewsOptions}>
+            <div class={lvOptionsClass} role="listbox" tabindex="0" aria-busy="false">  
+                <ul class="slds-listbox slds-listbox_vertical" role="presentation">
+
+                  <!-- value={updatedValue} -->
+                  <!-- placeholder={placeholder} -->
+                  <lightning-combobox class="slds-is-open"
+                      name="picklist"
+                      label="nolabel"
+                      options={stdListviewsOptions}
+                      onchange={handleSwitchConfig}
+                      variant="label-hidden"
+                      value={selectedValue}>
+                  </lightning-combobox>
+<!-- 
+                  <template for:each={stdListviewsOptions} for:item="lvOption">
+                    <li key={lvOption.value} role="presentation" class="slds-listbox__item">
+                      <div class="slds-media slds-listbox__option slds-listbox__option_plain slds-media_small" role="option">
+                        <span class="slds-media__figure slds-listbox__option-icon"></span>
+                        <span class="slds-media__body">
+                          <span id={lvOption.value} class="slds-truncate" title={lvOption.value} onclick={handleSwitchConfig}>{lvOption.label}</span>
+                        </span>
+                      </div>
+                    </li>
+                  </template>
+                   -->
+                </ul>
+            </div>
+        </template>
+    </div>
+</template>

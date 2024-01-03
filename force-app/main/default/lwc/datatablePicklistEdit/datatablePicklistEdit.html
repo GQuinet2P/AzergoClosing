@@ -1,0 +1,41 @@
+<template>
+    <!-- <div data-id="datatablePicklist" class="picklist-container"> -->
+        <!-- <div class="backdrop" onclick={handleClickOutside} onkeyup={handleKey}></div> -->
+        <!-- <section 
+            class="slds-popover slds-popover_edit" 
+            role="dialog" 
+            aria-label="Edit lookup" 
+            tabindex="-1"> -->
+            <!-- style={editPopupStyle}  -->
+            <!-- <input type="checkbox" name="applyToAll" value="Appliquer le changement à toutes les lignes séléctionnées" onchange={handleApplyToAll} /> -->
+
+            <lightning-combobox class="slds-is-open"
+                name="picklist"
+                label={label}
+                value={editedValue}
+                placeholder={placeholder}
+                options={options}
+                onchange={handleChange}
+                variant="label-hidden">
+            </lightning-combobox>
+            
+            <!-- onblur={handleBlur} -->
+            <!-- </section> -->
+            <!-- </div> -->
+
+
+
+
+            <!-- <div class="slds-grid">
+                <div class="slds-col slds-truncate" style="width: 100%;">{value}</div>
+                <div class="slds-col slds-grid-align_end">
+                    <lightning-button-menu onselect={handleChange}>
+                        <template if:true={options}>
+                            <template for:each={options} for:item="option">
+                                <lightning-menu-item key={option.value} value={option.value} label={option.label}></lightning-menu-item>
+                            </template>
+                        </template>
+                    </lightning-button-menu>
+                </div>
+            </div> -->
+</template>

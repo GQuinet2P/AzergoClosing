@@ -1,0 +1,44 @@
+<template>
+    <div class="slds-grid slds-grid_vertical slds-gutters">
+        <div class="slds-col slds-p-around_small lgc-bg">
+            <div>
+                <span>
+                    <lightning-icon slot="media" icon-name="utility:attach" size="x-small"></lightning-icon>
+                </span>
+                <span style="padding-left: 5px;"><b>Pièce jointe</b></span>
+            </div>
+        </div>
+        <div class="slds-col">
+            <template if:true={structure}>
+                <template if:false={selectedFileLabel}>
+                    <div>
+                        <template if:true={items}>
+                            <div class="lgc-bg">
+                                <lightning-tree items={items} onselect={handleSelectItem} header={treeHeader}></lightning-tree>
+                            </div>
+                        </template>
+                        <template if:false={hasItems}>
+                            <div>Pas de devis lié à l'opportunité</div>
+                        </template>
+                    </div>
+                </template>
+                <template if:true={selectedFileLabel}>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_2-of-6">
+                            <div>
+                                Pièce jointe : {selectedFileLabel}
+                            </div>
+                        </div>
+                        <div class="slds-col slds-size_1-of-6">
+                            <!-- <template if:true={selectedFileLabel}> -->
+                                <div>
+                                    <lightning-button-icon icon-name="utility:close"  variant="brand" onclick={handleRemoveSelection} alternative-text="remove file"></lightning-button-icon>
+                                </div>
+                            <!-- </template> -->
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </div>
+</template>

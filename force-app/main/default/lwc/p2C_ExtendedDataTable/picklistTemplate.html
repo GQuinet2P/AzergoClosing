@@ -1,0 +1,61 @@
+<template>
+    <!-- <section 
+        class="slds-popover slds-popover_edit" 
+        role="dialog" 
+        aria-label="Edit lookup" 
+        tabindex="-1"> -->
+        <!-- style={editPopupStyle}  -->
+
+        <!-- <input type="checkbox" name="applyToAll" value="Appliquer le changement à toutes les lignes séléctionnées" onchange={handleApplyToAll} /> -->
+        <!-- <lightning-combobox class="slds-is-open"
+            style="z-index: 9100; background-color: white; margin-top: 1px; display: block;"
+            data-inputable="true"
+            name="picklist"
+            label={label}
+            value={editedValue}
+            placeholder={typeAttributes.placeholder}
+            options={typeAttributes.options}
+            variant="label-hidden">
+        </lightning-combobox> -->
+        
+        <!-- onblur={handleBlur} -->
+    <!-- </section> -->
+<!-- onchange={handleChange} -->
+
+    <!-- <div class="picklist-container"> -->
+
+        <c-datatable-picklist
+            data-id={typeAttributes.fieldName}
+            data-inputable="true"
+            label={typeAttributes.label}
+            value={value}
+            edited-value={typeAttributes.editedValue}
+            placeholder={typeAttributes.placeholder}
+            options={typeAttributes.options}
+            context={typeAttributes.context}
+            allow-edit={typeAttributes.allowEdit}
+            context-name={typeAttributes.contextName}
+            reset={typeAttributes.reset}
+            field-name={typeAttributes.fieldName}>
+        </c-datatable-picklist>
+        <!-- is-mass-edit-enabled={massEditEnabled}
+        number-of-selected-rows={massEditSelectedRows} -->
+
+        <!-- <c-datatable-picklist-edit
+            data-id={typeAttributes.fieldName}
+            data-inputable="true"
+            label={typeAttributes.label}
+            value={editedValue}
+            placeholder={typeAttributes.placeholder}
+            options={typeAttributes.options}
+            context={typeAttributes.context}
+            context-name={typeAttributes.contextName}
+            field-name={typeAttributes.fieldName}>
+        </c-datatable-picklist-edit> -->
+        <!-- is-mass-edit-enabled={massEditEnabled}
+        number-of-selected-rows={massEditSelectedRows}
+        reset={typeAttributes.reset}
+        allow-edit={typeAttributes.allowEdit}
+        edited-value={typeAttributes.editedValue} -->
+    <!-- </div> -->
+</template>

@@ -1,0 +1,38 @@
+<template>
+    <div data-id="datatablePicklist" class="picklist-container">
+        <template if:false={editMode}>
+            <template if:true={allowEdit}>
+                <span class="slds-grid slds-grid_align-end">
+                        <div class="slds-truncate" style="width: 100%;">{value}</div>
+                    <lightning-button-icon class="slds-button slds-button_icon slds-cell-edit__button slds-m-left_x-small" icon-name="utility:edit" variant="bare" alternative-text="Edit" title="Edit" onclick={handleSwitchMode}></lightning-button-icon>
+                </span>
+            </template>
+            <template if:false={allowEdit}>
+                <span class="slds-truncate" title={value}>{value}</span>
+            </template>
+        </template>
+        <template if:true={editMode}>
+            <div class="backdrop" onclick={handleClickOutside} onkeyup={handleKey}></div>
+            <section 
+                class="slds-popover slds-popover_edit" 
+                style={editPopupStyle} 
+                role="dialog" 
+                aria-label="Edit lookup" 
+                tabindex="-1">
+
+                <input type="checkbox" name="applyToAll" value="Appliquer le changement à toutes les lignes séléctionnées" onchange={handleApplyToAll} />
+                <lightning-combobox class="slds-is-open"
+                    name="picklist"
+                    label={label}
+                    value={updatedValue}
+                    placeholder={placeholder}
+                    options={options}
+                    onchange={handleChange}
+                    variant="label-hidden">
+                </lightning-combobox>
+                
+                <!-- onblur={handleBlur} -->
+            </section>
+        </template>
+    </div>
+</template>

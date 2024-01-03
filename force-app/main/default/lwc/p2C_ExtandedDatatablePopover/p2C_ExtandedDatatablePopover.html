@@ -1,0 +1,33 @@
+<template>
+    <template if:true={recordid} >
+        <lightning-card title="Record details" icon-name="standard:catalog" class="slds-popover" style={boxClass}>
+            <lightning-spinner if:true={isLoading} alternative-text="Loading" size="small"></lightning-spinner>
+            <lightning-record-edit-form
+                onload={handleLoaded}
+                record-id={recordid}
+                object-api-name={recordapiname}>
+                    <div class="slds-grid">
+                        <template for:each={columns} for:item="column">
+                            <div key={column.indexKey} class={columnClass}>
+                                <lightning:layout verticalalign="stretch">
+                                    <!-- <div class={columnClass} key={column.label}> -->
+                                        <template for:each={column.rows} for:item="row">
+                                            <lightning:layoutItem key={row.indexKey}>
+                                                <template if:false={row.emptyField}>
+                                                    <lightning-output-field field-name={row.fieldApiName}>
+                                                    </lightning-output-field>                                    
+                                                </template>
+                                                <template if:true={row.emptyField}>
+                                                    <p>&nbsp;</p>
+                                                </template>
+                                            </lightning:layoutItem>
+                                        </template>
+                                    <!-- </div> -->
+                                </lightning:layout>
+                            </div>
+                        </template>
+                    </div>
+            </lightning-record-edit-form>
+        </lightning-card>
+    </template>
+</template>

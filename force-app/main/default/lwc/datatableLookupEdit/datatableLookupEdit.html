@@ -1,0 +1,29 @@
+<template>
+    <div class="picklist-container">
+    <!-- 
+        <template if:false={editMode}>
+            <template if:true={allowEdit}>
+                <span class="slds-grid slds-grid_align-end">
+                    <div class="slds-truncate" style="width: 100%;">{recordName}</div>
+                    <lightning-button-icon class="slds-button slds-button_icon slds-cell-edit__button slds-m-left_x-small" icon-name="utility:edit" variant="bare" alternative-text="Edit" title="Edit" onclick={handleSwitchMode}></lightning-button-icon>
+                </span>
+            </template>
+            <template if:flase={allowEdit}>
+                <lightning-record-edit-form
+                        record-id={lookupId}
+                        object-api-name={lookupRecordApiName}>
+                    <lightning-input-field field-name={lookupFieldToDisplay} aria-label="hidden"></lightning-input-field>
+                </lightning-record-edit-form>
+            </template>
+        </template> -->
+        <c-p2-c_-custom-lookup-input-field
+            data-input-id={cellLookupInputId}
+            objectapiname={lookupRecordApiName}
+            fieldapiname={lookupFieldToDisplay}
+            label="test"
+            value={editedValue}
+            ongetselectedlookupvalue={handleSelect}
+            >
+        </c-p2-c_-custom-lookup-input-field>
+    </div>
+</template>

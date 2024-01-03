@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Condition__c</fullName>
+    <externalId>false</externalId>
+    <label>Condition</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>= {value}</fullName>
+                <default>false</default>
+                <label>equals</label>
+            </value>
+            <value>
+                <fullName>&lt;&gt; {value}</fullName>
+                <default>false</default>
+                <label>not equals</label>
+            </value>
+            <value>
+                <fullName>like &apos;%{value}%&apos;</fullName>
+                <default>false</default>
+                <label>contains</label>
+            </value>
+            <value>
+                <fullName>like &apos;{value}%&apos;</fullName>
+                <default>false</default>
+                <label>starts with</label>
+            </value>
+            <value>
+                <fullName>like &apos;%{value}&apos;</fullName>
+                <default>false</default>
+                <label>ends with</label>
+            </value>
+            <value>
+                <fullName>in ({value})</fullName>
+                <default>false</default>
+                <label>in</label>
+            </value>
+            <value>
+                <fullName>&gt; {value}</fullName>
+                <default>false</default>
+                <label>Greater than</label>
+            </value>
+            <value>
+                <fullName>&lt; {value}</fullName>
+                <default>false</default>
+                <label>Less than</label>
+            </value>
+            <value>
+                <fullName>(not {field} like &apos;%{value}%&apos;)</fullName>
+                <default>false</default>
+                <label>Not contains</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+span {
+    color: blue;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+span:hover {
+    text-decoration:underline;
+}

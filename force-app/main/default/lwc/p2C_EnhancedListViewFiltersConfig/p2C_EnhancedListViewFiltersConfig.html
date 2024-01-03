@@ -1,0 +1,65 @@
+<template>
+    <div class="backdrop" onclick={handleClickOutside} onkeyup={handleKey}></div>
+    <lightning-card title={label.filterEditorTitle} icon-name="standard:catalog" class="slds-popover" style={boxClass}>
+        <h3 slot="title">
+            {label.filterEditorTitle}
+        </h3>
+        <!-- <div slot="footer">
+            <lightning-button variant="brand" label="Add filter" title="Add filter to current filters" icon-name="utility:add" class="slds-m-left_x-small" onclick={handleAddFilter}></lightning-button>
+        </div> -->
+
+        <template if:true={filters}>
+            <!-- <div class="slds-scrollable__y"  style="width: 300px; height: 500px; overflow-x: hidden; overflow-y: scroll; margin-right: 0; margin-left: auto;"> -->
+            <div style="width: 300px; overflow-x: hidden; margin-right: 0; margin-left: auto;">
+                <div class="slds-grid slds-grid_vertical slds-gutters" style="padding-left:10px; padding-right: 30px;">
+                    <template for:each={filters} for:item="group">
+                        <div key={group.groupNumber} class="slds-col slds-box" style="margin: 5px 5px 5px 10px;"> 
+                            <b>{group.groupNumber}</b>
+                            <div class="slds-grid slds-grid_vertical slds-gutters">
+                                <template for:each={group.filters} for:item="filter">
+                                    <div key={filter.value} class="slds-col"> 
+                                        {filter.label}
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>                
+                    <div class="slds-col slds-box" style="margin: 5px 5px 5px 10px;"> 
+                        <b>{filtersLogic}</b>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+ <!--
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-combobox 
+                    name="FieldPicker" 
+                    label="Field" 
+                    placeholder="Select a field" 
+                    options={describedFields} 
+                    onchange={handleChangeField}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-combobox 
+                    name="ConditionPicker" 
+                    label="Condition" 
+                    placeholder="Select a condition" 
+                    options={conditionOptions} 
+                    onchange={handleChangeOption}>
+                </lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-record-edit-form object-api-name={objectApiName}>
+                    <lightning-input-field 
+                        value={pickerValue}
+                        field-name={selectedFieldName} 
+                        onchange={handelChangeValue}>
+                    </lightning-input-field>
+                </lightning-record-edit-form>
+            </div>
+        </div> -->
+    </lightning-card>
+</template>

@@ -1,0 +1,48 @@
+<template>
+    <div class="slds-grid" data-role="container" style="background: none;">
+        <template if:true={itemCanDrop}>
+            <div data-role="drop-before" data-id={itemOrder} class="slds-col link" ondragleave={handledDropBeforeHide} ondragover={handledDropBeforeShow} ondragenter={handledDropBeforeShow} ondrop={handleDropBefore}>
+                <template if:false={itemIsFirst}>
+                    <div style="border-color: black; width: 100%; height: 14px; border-bottom: solid"></div>
+                </template>
+                <!-- <template if:false={itemIsFirst}>
+                    <hr style="position: relative; top: -15px;" />
+                </template> -->
+            </div>
+        </template>
+        <template if:false={itemCanDrop}>
+            <div class="slds-col link">
+            </div>
+        </template>
+        <div class="slds-box slds-col itemStyle" data-role="drag-item" data-id={itemOrder} draggable={itemIsDraggable} ondragstart={handleDragStart} ondragend={handleDragStop}>
+            <div class="slds-grid" style="display: block; width: 137px;">
+                <template if:true={showIcons}>
+                    <div class="slds-col slds-size_5-of-6 slds-text-body_xx-small itemLabel" title={itemLabel} data-id={itemOrder} onclick={handleChangeDirection}>{itemLabel}</div>
+                    <div class="slds-col slds-size_1-of-6" style="float: right; padding: 0px; margin: 0px; width: 32px;">
+                        <div class="slds-grid slds-gutters" style="margin: 0; padding: 0; width: 32px;">
+                            <div class="slds-col slds-text-body_small" style="padding:0; margin: 0; width: 16px;"><lightning-icon icon-name={itemDirectionIcon} size="x-small"></lightning-icon></div>
+                            <div class="slds-col" style="padding:0; margin: 0; width: 16px;"><lightning-button-icon data-id={itemOrder} icon-name="utility:delete" variant="bare" onclick={handleRemoveOrderItem}></lightning-button-icon></div>
+                        </div>
+                    </div>
+                </template>
+                <template if:false={showIcons}>
+                    <div class="slds-col slds-text-body_xx-small" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap; float:left; margin: 0; padding: 0px; max-width: 137px;">{itemLabel}</div>
+                </template>
+            </div>
+        </div>
+        <template if:true={itemCanDrop}>
+            <div data-role="drop-after" data-id={itemOrder} class="slds-col link" ondragleave={handledDropAfterHide} ondragover={handledDropAfterShow} ondragenter={handledDropAfterShow} ondrop={handleDropAfter}>
+                <template if:false={itemIsLast}>
+                    <div style="border-color: black; width: 100%; height: 14px; border-bottom: solid"></div>
+                </template>
+                <!-- <template if:false={itemIsLast}>
+                    <hr style="position: relative; top: -15px;" />
+                </template> -->
+            </div>
+        </template>
+        <template if:false={itemCanDrop}>
+            <div class="slds-col link">
+            </div>
+        </template>
+    </div>
+</template>

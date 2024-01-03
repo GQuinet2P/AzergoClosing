@@ -1,0 +1,7 @@
+[app_flexipage-header_header-host]{
+    display:none;
+}
+
+header.flexipageHeader.slds-page-header.uiBlock.oneAnchorHeader { 
+    display: none;
+}

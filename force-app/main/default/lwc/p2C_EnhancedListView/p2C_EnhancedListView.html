@@ -1,0 +1,246 @@
+<template>
+
+  <lightning-spinner if:true={isLoading} class="slds-is-fixed" style="z-index: 9999;" alternative-text={label.loading} size="small"></lightning-spinner>
+
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-title">
+            <div class="slds-media">
+              <div class="slds-media__figure">
+                <lightning-icon icon-name={listviewIcon} alternative-text={listviewTitle}></lightning-icon>
+              </div>
+              <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                  <div class="slds-page-header__name-title">
+                    <h1>
+                      <span>{listviewTitle}</span>
+                      <span class="slds-page-header__title slds-truncate" title={listviewCardTitle}>{listviewCardTitle}</span>
+                    </h1>
+                  </div>
+                  <div class="slds-page-header__name-switcher">
+                    <div class="slds-dropdown-trigger slds-dropdown-trigger_click" onclick={handlePinListview}>
+                      <template if:true={isPinnedListview}>
+                        <lightning-button-icon icon-name="utility:pinned" variant="bare" alternative-text={label.unpinListview} class="slds-button slds-button_icon slds-icon_x-small" title={label.unpinListview} aria-hidden="true"></lightning-button-icon>
+                      </template>
+                      <template if:false={isPinnedListview}>
+                        <lightning-button-icon icon-name="utility:pin" variant="bare" alternative-text={label.pinListview} class="slds-button slds-button_icon slds-icon_x-small" title={label.pinListview} aria-hidden="true"></lightning-button-icon>
+                      </template>
+                    </div>             
+                    <div class="slds-dropdown-trigger slds-dropdown-trigger_click" onclick={handleShowListviewList}>
+                      <lightning-button-icon icon-name="utility:down" variant="bare" alternative-text={label.switchListview} class="slds-button slds-button_icon slds-icon_x-small" title={label.switchListview} aria-hidden="true"></lightning-button-icon>
+                    </div>             
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- *************** -->
+          <!-- ACTIONS HERE -->
+          <!-- *************** -->
+
+          <div class="slds-page-header__col-actions">
+            <div class="slds-page-header__controls">
+              <div class="slds-page-header__control">
+                <template if:true={actionOptions}>
+                  <lightning-button-group>
+                      <template for:each={actionOptions} for:item="action">
+                              <lightning-button key={action.value} value={action.value} label={action.label} title={action.label} onclick={handleActionStart}></lightning-button>
+                      </template>
+                  </lightning-button-group>
+                </template>
+                <!-- <ul class="slds-button-group-list" role="group"> -->
+                <!-- </ul> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- *************** -->
+        <!-- LISTVIEW INFOS & CONTROLS HERE -->
+        <!-- *************** -->
+
+        <div class="slds-page-header__row">
+          <div class="slds-page-header__col-meta">
+            <div style="display: flex;">
+              <p class="slds-page-header__meta-text">{listItemsCount} / {listItemsCountTotal} {label.results}</p>
+              <p class="slds-page-header__meta-text" if:true={selectedRowCount}>&nbsp;• {selectedRowCount} {label.selected}</p>
+            </div>
+          </div>
+
+
+          <!-- ************************************* -->
+          <!-- LISTVIEW FILTERS/SORTING CONTROL HERE -->
+          <!-- ************************************* -->
+
+          <div class="slds-page-header__col-controls">
+            <div class="slds-page-header__controls">
+              <div class="slds-page-header__control">
+                <lightning-input style="width: 300px;" type="search" placeholder={label.searchInputHolder} variant="label-hidden" onchange={handleSearchTable}></lightning-input>
+              </div>
+              <div class="slds-page-header__control">
+                <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                    <lightning-button-icon icon-name="utility:settings" variant="border-filled" alternative-text={label.settings} class="slds-button slds-button_icon" title={label.settings} onclick={handleShowListviewSettings} disabled="true"></lightning-button-icon>
+                </div>
+              </div>
+              <div class="slds-page-header__control">
+                <lightning-button-icon icon-name="utility:refresh" variant="border-filled" alternative-text={label.refreshList} class="slds-button slds-button_icon" title={label.refreshList} onclick={refreshTableResults}></lightning-button-icon>
+              </div>
+              <div class="slds-page-header__control">
+                <lightning-button-icon icon-name="utility:table" variant="border-filled" alternative-text={label.configureOrder} class="slds-button slds-button_icon" title={label.configureOrder} onclick={handleShowAddOrderBy} disabled={showAddFilter}></lightning-button-icon>
+              </div>
+              <div class="slds-page-header__control">
+                <lightning-button-icon icon-name="utility:filterList" variant="border-filled" alternative-text={label.configureFilters} class="slds-button slds-button_icon" title={label.configureFilters} onclick={handleShowAddFilter} disabled={showAddFilter}></lightning-button-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ************************************* -->
+        <!--            ORDER SHOWN HERE           -->
+        <!-- ************************************* -->
+        <template if:true={showAddOrderBy}>
+          <hr style="margin-top: 10px; margin-bottom: 10px; padding: 0;" />
+          <span>{label.activeOrdersLabel}</span>
+          <template if:true={fieldOrders}>
+            <div class="slds-page-header__row">
+              <div style="width: 100%; overflow: auto; margin-top:0px; margin-left: 0; margin-right: auto; padding-right: 10px;">
+                  <div class="slds-grid slds-grid slds-gutters" style="width: 100%; padding-left:10px; padding-right: 20px; height: 40px;">
+                      <template for:each={fieldOrders} for:item="order">
+                          <c-dragable-listview-sort-item key={order.sortOrder} item-can-drop="true" show-icons="true" item-is-first={order.isFirst} item-is-last={order.isLast} item-name={order.fieldName} item-label={order.fieldLabel} item-direction={order.direction} item-direction-icon={order.directionIcon} item-order={order.sortOrder} onchangeitemdirection={handleChangeOrderDirection} ondragitemorder={handleOrderDragStart} ondragitemorderstop={handleOrderDragStop} onmoveitembeforeorder={handleMoveOrderBefore} onmoveitemafterorder={handleMoveOrderAfter} onremoveorderitem={handleDeleteOrderItem}></c-dragable-listview-sort-item>
+                      </template>                
+                  </div>
+              </div>
+            </div>
+          </template>
+          <template if:false={fieldOrders}>
+            <div class="slds-page-header__row">
+              <div style="width: 100%; overflow: auto; margin-top:0px; margin-left: 0; margin-right: auto; padding-right: 10px;">
+                  <div class="slds-grid slds-grid slds-gutters" data-role="newSortField" style="width: 100%; padding-left:10px; padding-right: 20px; height: 40px;" ondragleave={handledDropNewHide} ondragover={handledDropNewShow} ondragenter={handledDropNewShow} ondrop={handleAddFirstOrder} >
+                  </div>
+              </div>
+            </div>
+          </template>
+          <template if:true={availableFieldOrders}>
+              <div class="slds-page-header__row">
+              <div class="slds-box" style="width: 100%; overflow: auto; margin: 5px auto 0 0; padding-right: 10px;">
+                <span style="position: absolute; margin-top: -26px; margin-left: 0px; background: grey; border: 1px solid grey; border-radius: 13px; padding-left: 5px; padding-right: 5px;" title={label.additionalOrdersTooltip}>{label.additionalOrdersLabel}</span>
+                <div style="width: 100%; padding: 10px 20px 0 10px;">
+                  <template for:each={availableFieldOrders} for:item="order">
+                    <c-dragable-listview-sort-item key={order.fieldLabel} item-is-used={order.used} item-is-first={order.isFirst} item-is-last={order.isLast} item-name={order.fieldName} item-label={order.fieldLabel} item-direction={order.direction} item-order={order.sortOrder} ondragitemorder={handleNewOrderDragStart} ondragitemorderstop={handleNewOrderDragStop}></c-dragable-listview-sort-item>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+        </template>
+    </div>
+
+        <div style="margin-left: 14px; margin-right: 14px; margin-top: 15px;">
+            <div data-id="extendedDatatableContainer" class="slds-grid slds-grid_vertical slds-gutters">
+
+
+                <template if:true={listContent}>
+                    <div class="slds-col slds-box slds-theme_shade slds-box_xx-small slds-m-bottom_x-small" style={lvTableContainerClass}>
+                        <c-p2-c_-extended-data-table
+                            key-field="Id"
+                            data={listContent}
+                            columns={columns}
+                            draft-values={draftValues}
+                            onrowselection={handleRowSelection}
+                            oncellchange={handleCellChange}
+                            onmouseover={handleMouseOver}
+                            onmouseout={handleMouseOut}
+                            onrowaction={handleRowAction}
+                            onshowdetailpopup={handleShowDetails}
+                            onhidedetailpopup={handleHideDetails}
+                            suppress-bottom-bar="true"
+                            enable-infinite-loading
+                            onloadmore={handleLoadMoreData}>
+                          </c-p2-c_-extended-data-table>
+                          <!-- sorted-direction={sortDirection} -->
+                          <!-- onsave={handleTableSave} -->
+                          <!-- options={pickoptions} -->
+                          <!-- onsort={handleSortData} -->
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <template if:true={showChangeActionBar}>
+          <div style="z-index: 9000; position: fixed; bottom: 0px; left:14px; right: 14px; height: 40px; padding: 4px 0px 4px 0px; margin: 10px 0px 0px 0px; background-color: #F3F3F3;">
+            <div class="slds-grid slds-grid--align-center slds-gutters">
+              <div class="slds-col">
+                <span>
+                  <lightning-button 
+                    icon-name="utility:delete" 
+                    variant="bare" 
+                    label={label.cancelButton} 
+                    alternative-text={label.cancelButtonAlt} 
+                    class="slds-m-left_x-small" 
+                    title={label.cancelButtonAlt}
+                    aria-hidden="true" onclick={handleTableReset}></lightning-button>
+                  </span>
+              </div>
+      
+              <div class="slds-col">
+                <span>
+                  <lightning-button 
+                      icon-name="utility:save" 
+                      label={label.saveButton} 
+                      variant="brand" 
+                      alternative-text={label.saveButtonAlt} 
+                      class="slds-m-left_x-small" 
+                      title={label.saveButtonAlt}
+                      aria-hidden="true" onclick={handleTableSave}></lightning-button>
+                    </span>
+              </div>
+            </div>
+          </div>
+            <!-- style="z-index: 9000; position: fixed; bottom: 40px; left: 0; right: 0;width: 100%; background-color: GREY;" -->
+        </template>
+
+        <c-p2-c_-extanded-datatable-popover top={rowDetailTop} left={rowDetailLeft} popupwidth={rowDetailWidth} popupalign={rowDetailAlign} recordid={rowDetailId} columns={rowDetailColumns} recordapiname={rowDetailObjectApiName}></c-p2-c_-extanded-datatable-popover>
+
+        <template if:true={showSwitchListview}>
+          <c-p2-c_-enhanced-list-view-config-switch pos-x={lvSwitchpopupX} pos-y={lvSwitchpopupY} std-listviews-options={stdListviewsOptions} onswitchlistview={handleSwitchConfig} onclosefilteredit={handleCloseConfigSwitch} selected-value={selectedListviewConfig}></c-p2-c_-enhanced-list-view-config-switch>
+        </template>
+
+
+        <!-- <template if:true={showAddFilter}>
+            <c-p2-c_-enhanced-list-view-filters-config pos-x={filterspopupX} pos-y={filterspopupY} object-api-name={objectApiName} described-fields={filterFieldOptions} filters={filters} onupdatefilters={handleUpdateFilters} onclosefilteredit={handleCloseFilterEdit}></c-p2-c_-enhanced-list-view-filters-config>
+        </template> -->
+
+        <template if:true={showAddFilter}>
+            <c-p2-c_-enhanced-list-view-filters-config pos-x={filterspopupX} pos-y={filterspopupY} object-api-name={objectApiName} described-fields={filterFieldOptions} filters={fieldFilters} filters-logic={fieldFiltersLogic} onupdatefilters={handleUpdateFilters} onclosefilteredit={handleCloseFilterEdit}></c-p2-c_-enhanced-list-view-filters-config>
+        </template>
+
+        <!-- <template if:true={showAddOrderBy}>
+            <c-p2-c_-enhanced-list-view-order-config pos-x={orderspopupX} pos-y={orderspopupY} described-fields={filterFieldOptions} orders={fieldOrders} onupdateorderby={handleUpdateOrderBy} oncloseorderedit={handleCloseOrderByEdit}></c-p2-c_-enhanced-list-view-order-config>
+        </template> -->
+
+        <template if:true={flowStart}>
+            <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open slds-modal_medium">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title={label.closeButton} onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close"
+                                alternative-text={label.closeButton}
+                                variant="inverse"
+                                size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">{label.closeButton}</span>
+                        </button>
+
+                        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate" tabindex="-1">{modalTitle}</h1>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <lightning-flow if:true={flowStart} flow-api-name={flowApiName}
+                                flow-input-variables={flowInputVariables} flow-finish-behavior="NONE" onstatuschange={handleFlowStatusChange}>
+                            </lightning-flow>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+        </template>
+</template>

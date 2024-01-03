@@ -1,0 +1,33 @@
+<template>
+        <div class="slds-m-around_medium">
+            <lightning-input type="file" 
+            accept={acceptedExtensions}
+            label={FileUploadLabel} onchange={openfileUpload}></lightning-input>
+        </div>
+        <template if:true={fileData}>
+            <p>{fileData.filename}</p>
+        </template>
+        <template if:true={loading}>
+            <div class="centerText">
+                {loaderTitle}
+            </div>
+            <div class="barStyle">
+                <lightning-progress-bar
+                value={progress}
+                size="medium"
+                variant="circular"></lightning-progress-bar>
+            </div>
+        </template>
+        <template if:true={successMessage}>
+            <div class="centerText successBkg">
+                {successMessage}
+            </div>
+        </template>
+        <template if:true={errorMessage}>
+            <div>
+                <div class="centerText errorBkg">
+                    {errorMessage}
+                </div>
+            </div>
+        </template>
+</template>

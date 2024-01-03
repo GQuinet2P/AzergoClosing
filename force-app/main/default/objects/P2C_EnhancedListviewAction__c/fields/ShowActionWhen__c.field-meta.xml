@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ShowActionWhen__c</fullName>
+    <externalId>false</externalId>
+    <label>Show action when</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Always</fullName>
+                <default>true</default>
+                <label>Always</label>
+            </value>
+            <value>
+                <fullName>One record is selected</fullName>
+                <default>false</default>
+                <label>One record is selected</label>
+            </value>
+            <value>
+                <fullName>One or more records are selected</fullName>
+                <default>false</default>
+                <label>One or more records are selected</label>
+            </value>
+            <value>
+                <fullName>More than one record is selected</fullName>
+                <default>false</default>
+                <label>More than one record is selected</label>
+            </value>
+            <value>
+                <fullName>Admins Only</fullName>
+                <default>false</default>
+                <label>Admins Only</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
